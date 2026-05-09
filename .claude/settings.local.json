@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -v '^.*:$')",
+      "Bash(curl -s http://localhost:8080/)",
+      "Bash(curl *)",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f'Count: {len\\(d\\)}'\\)\")"
+    ],
+    "additionalDirectories": [
+      "/mnt/c/Users/27267/Projects/claude-code-ts"
+    ]
+  }
+}
