@@ -39,11 +39,11 @@ function onFileChange(e, isPublic) {
       <div style="display:flex;gap:8px">
         <label class="btn btn-outline btn-sm" style="cursor:pointer">
           {{ uploading ? '上传中...' : '+ 私有 Skill' }}
-          <input type="file" accept=".md" style="display:none" @change="onFileChange($event, false)" :disabled="uploading" />
+          <input type="file" accept=".zip" style="display:none" @change="onFileChange($event, false)" :disabled="uploading" />
         </label>
         <label class="btn btn-primary btn-sm" style="cursor:pointer">
           {{ uploading ? '上传中...' : '+ 公共 Skill' }}
-          <input type="file" accept=".md" style="display:none" @change="onFileChange($event, true)" :disabled="uploading" />
+          <input type="file" accept=".zip" style="display:none" @change="onFileChange($event, true)" :disabled="uploading" />
         </label>
       </div>
     </div>
@@ -64,7 +64,7 @@ function onFileChange(e, isPublic) {
     <div v-if="activeTab === 'private'">
       <div v-if="mySkills.length === 0 && !loading" class="empty">
         <p>还没有私有 Skill</p>
-        <p style="font-size:13px;margin-top:4px">点击上方按钮上传 SKILL.md 文件</p>
+        <p style="font-size:13px;margin-top:4px">点击上方按钮上传 SKILL.zip 文件</p>
       </div>
       <div class="grid" v-else>
         <SkillCard v-for="s in mySkills" :key="s.id" :skill="s" :show-delete="true" @delete="deleteSkill" />

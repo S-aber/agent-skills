@@ -22,17 +22,16 @@ async def upload_public_skill(
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    if not file.filename or not file.filename.endswith(".md"):
-        raise HTTPException(status_code=400, detail="请上传 .md 格式的 SKILL.md 文件")
+    if not file.filename or not file.filename.lower().endswith(".zip"):
+        raise HTTPException(status_code=400, detail="请上传 .zip 格式的 Skill 压缩包")
 
-    content = await file.read()
+    zip_bytes = await file.read()
     try:
-        skill = await skill_service.create_skill(
+        skill = await skill_service.create_skill_from_zip(
             db=db,
             user_id=current_user.id,
             workspace_id=None,
-            filename=file.filename,
-            content=content,
+            zip_bytes=zip_bytes,
             source="public",
         )
         return skill
@@ -57,17 +56,16 @@ async def upload_skill(
     db: AsyncSession = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    if not file.filename or not file.filename.endswith(".md"):
-        raise HTTPException(status_code=400, detail="请上传 .md 格式的 SKILL.md 文件")
+    if not file.filename or not file.filename.lower().endswith(".zip"):
+        raise HTTPException(status_code=400, detail="请上传 .zip 格式的 Skill 压缩包")
 
-    content = await file.read()
+    zip_bytes = await file.read()
     try:
-        skill = await skill_service.create_skill(
+        skill = await skill_service.create_skill_from_zip(
             db=db,
             user_id=current_user.id,
             workspace_id=current_user.id,
-            filename=file.filename,
-            content=content,
+            zip_bytes=zip_bytes,
             source="private",
         )
         return skill

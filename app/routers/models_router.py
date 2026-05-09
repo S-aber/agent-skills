@@ -5,13 +5,28 @@ router = APIRouter(prefix="/api/v1", tags=["models"])
 
 settings = get_settings()
 
-# Pre-configured model list. In production this would come from a database.
 MODELS = [
     {
-        "id": settings.llm_default_model,
-        "display_name": settings.llm_default_model,
+        "id": "glm-4-flash",
+        "display_name": "GLM-4-Flash (免费)",
         "context_window": 128000,
-        "max_output_tokens": 16384,
+        "max_output_tokens": 4096,
+        "supports_tool_calling": True,
+        "is_active": True,
+    },
+    {
+        "id": "glm-4",
+        "display_name": "GLM-4",
+        "context_window": 128000,
+        "max_output_tokens": 4096,
+        "supports_tool_calling": True,
+        "is_active": True,
+    },
+    {
+        "id": "glm-4-plus",
+        "display_name": "GLM-4-Plus",
+        "context_window": 128000,
+        "max_output_tokens": 4096,
         "supports_tool_calling": True,
         "is_active": True,
     },

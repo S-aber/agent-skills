@@ -7,12 +7,34 @@ import SkillSelector from '../components/SkillSelector.vue'
 const router = useRouter()
 const { conversations, loading, fetchConversations, createConversation, deleteConversation } = useConversations()
 
+const models = ref([])
 const showCreate = ref(false)
-const newConv = ref({ title: '', model_id: 'gpt-4o', skillIds: [] })
+const defaultModelId = ref('')
+const newConv = ref({ title: '', model_id: '', skillIds: [] })
 const creating = ref(false)
 const error = ref('')
 
-onMounted(fetchConversations)
+onMounted(async () => {
+  await fetchConversations()
+  try {
+    const res = await fetch('/api/v1/models')
+    models.value = await res.json()
+    if (models.value.length > 0) {
+      defaultModelId.value = models.value[0].id
+      newConv.value.model_id = models.value[0].id
+    }
+  } catch (e) {
+    // fallback
+    models.value = [{ id: 'glm-4-flash', display_name: 'GLM-4-Flash' }]
+    defaultModelId.value = 'glm-4-flash'
+    newConv.value.model_id = 'glm-4-flash'
+  }
+})
+
+function openCreate() {
+  newConv.value = { title: '', model_id: defaultModelId.value, skillIds: [] }
+  showCreate.value = true
+}
 
 async function handleCreate() {
   if (!newConv.value.title.trim()) { error.value = '请输入标题'; return }
@@ -20,7 +42,6 @@ async function handleCreate() {
   try {
     const conv = await createConversation(newConv.value.title, newConv.value.skillIds, newConv.value.model_id)
     showCreate.value = false
-    newConv.value = { title: '', model_id: 'gpt-4o', skillIds: [] }
     router.push(`/chat/${conv.id}`)
   } catch (e) {
     error.value = e.detail?.message || e.error?.message || '创建失败'
@@ -38,7 +59,7 @@ function openChat(id) {
   <div>
     <div class="page-header">
       <h1>我的会话</h1>
-      <button class="btn btn-primary" @click="showCreate = true">+ 新建会话</button>
+      <button class="btn btn-primary" @click="openCreate">+ 新建会话</button>
     </div>
 
     <div v-if="loading" class="loading">加载中...</div>
@@ -74,7 +95,7 @@ function openChat(id) {
         <div class="form-group">
           <label>模型</label>
           <select v-model="newConv.model_id" class="form-input">
-            <option value="gpt-4o">gpt-4o</option>
+            <option v-for="m in models" :key="m.id" :value="m.id">{{ m.display_name }}</option>
           </select>
         </div>
         <SkillSelector v-model="newConv.skillIds" />

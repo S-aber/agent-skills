@@ -1,11 +1,14 @@
 """LLM service — OpenAI-compatible API client for local deployment."""
 
 import json
+import logging
+import time
 from typing import AsyncGenerator
 import httpx
 from app.config import get_settings
 from app.tools.base import Tool
 
+logger = logging.getLogger("llm")
 settings = get_settings()
 
 
@@ -47,9 +50,15 @@ async def chat_stream(
         payload["tools"] = tools
         payload["tool_choice"] = "auto"
 
+    msg_count = len(messages)
+    tool_count = len(tools)
+    start = time.time()
+    logger.info("LLM stream → %s, model=%s, messages=%d, tools=%d", url, model_id, msg_count, tool_count)
+
     async with httpx.AsyncClient(timeout=httpx.Timeout(120.0, connect=10.0)) as client:
         async with client.stream("POST", url, json=payload, headers=headers) as response:
             if response.status_code != 200:
+                logger.warning("LLM stream returned %s", response.status_code)
                 body = await response.aread()
                 raise LLMError(
                     "MODEL_UNAVAILABLE",

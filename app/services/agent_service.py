@@ -1,6 +1,7 @@
 """Agent service — core tool-calling loop (modeled after claude-code-ts src/query.ts)."""
 
 import json
+import logging
 from typing import AsyncGenerator
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.models.conversation import Conversation
@@ -11,6 +12,8 @@ from app.tools.registry import ToolRegistry, get_builtin_tools
 from app.services import skill_service
 from app.services.llm_service import chat_stream, LLMError
 from app.config import get_settings
+
+logger = logging.getLogger("agent")
 
 settings = get_settings()
 
@@ -27,6 +30,14 @@ You have access to built-in tools (file operations, code execution, web access) 
 - Execute code to verify solutions
 - Search the web for current information when needed
 - When a skill tool is called, its full instructions will be provided — follow them carefully
+
+## File Formats
+- For text files (.txt, .md, .json, .py, .html, .css, .js, etc.): use write_file directly
+- For binary formats (.docx, .xlsx, .pdf, .png, etc.): you MUST use execute_python to generate them
+  - .docx: use python-docx library (from docx import Document)
+  - .xlsx: use openpyxl library
+  - .pdf: use reportlab or fpdf library
+  - Example for docx: write Python code that creates a Document, adds content, and saves
 
 ## Response Style
 - Respond in the user's language
@@ -79,7 +90,8 @@ async def _build_tool_registry(
                 skill_tool = SkillTool(skill, content)
                 registry.register(skill_tool)
             except skill_service.SkillError:
-                pass  # Skip skills with missing files
+                logger.warning("Skipping skill %s — file missing", skill_id)
+                pass
 
     return registry, activated_skills
 
@@ -119,8 +131,11 @@ async def run_agent(
     model_id = conversation.model_id
     activated_skill_ids = json.loads(conversation.activated_skill_ids)
 
+    logger.info("[conv=%s] Starting agent run, model=%s, skills=%d", conv_id[:8], model_id, len(activated_skill_ids))
+
     # Build tool registry
     registry, skills = await _build_tool_registry(db, activated_skill_ids)
+    logger.info("[conv=%s] Built registry: %d builtin + %d skill tools", conv_id[:8], len(get_builtin_tools()), len(skills))
 
     # Build working context
     tool_context = ToolContext(
@@ -193,7 +208,10 @@ async def run_agent(
                     # Execute the tool
                     tool = registry.get(tool_name)
                     if tool:
+                        logger.debug("[conv=%s] Executing tool: %s", conv_id[:8], tool_name)
                         result = await tool.execute(tool_input, tool_context)
+                        status = "error" if result.is_error else "ok"
+                        logger.info("[conv=%s] Tool %s completed (%s, %d chars)", conv_id[:8], tool_name, status, len(result.content))
                         yield f"event: tool_result\ndata: {json.dumps({'type': 'tool_result', 'tool_use_id': tool_use_id, 'tool_name': tool_name, 'content': result.content, 'is_error': result.is_error})}\n\n"
 
                         # Append assistant message with tool calls to history
@@ -225,9 +243,11 @@ async def run_agent(
                         yield f"event: error\ndata: {json.dumps({'type': 'error', 'code': 'TOOL_NOT_FOUND', 'message': f'Tool not found: {tool_name}'})}\n\n"
 
         except LLMError as e:
+            logger.error("[conv=%s] LLM error: [%s] %s", conv_id[:8], e.code, e.message)
             yield f"event: error\ndata: {json.dumps({'type': 'error', 'code': e.code, 'message': e.message})}\n\n"
             break
         except Exception as e:
+            logger.exception("[conv=%s] Unexpected error in agent loop", conv_id[:8])
             yield f"event: error\ndata: {json.dumps({'type': 'error', 'code': 'INTERNAL_ERROR', 'message': str(e)})}\n\n"
             break
 
@@ -242,6 +262,7 @@ async def run_agent(
             db.add(assistant_db_msg)
             await db.commit()
 
+            logger.info("[conv=%s] Agent run complete: %d tool calls, %d chars output", conv_id[:8], tool_call_count, len(assistant_content))
             yield f"event: done\ndata: {json.dumps({'type': 'done', 'usage': {'input_tokens': total_input_tokens, 'output_tokens': total_output_tokens}, 'num_turns': tool_call_count + 1})}\n\n"
             return
 

@@ -1,7 +1,10 @@
 import os
 import re
+import io
 import uuid
 import shutil
+import zipfile
+import tempfile
 from pathlib import Path
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, func
@@ -19,8 +22,20 @@ class SkillError(Exception):
         self.status_code = status_code
 
 
-def parse_skill_md(content: str) -> tuple[str, str]:
+def _find_skill_md(folder: str) -> str:
+    """Recursively search for SKILL.md in extracted folder (case-insensitive)."""
+    for root, dirs, files in os.walk(folder):
+        for f in files:
+            if f.lower() == "skill.md":
+                return os.path.join(root, f)
+    raise SkillError("SKILL_PARSE_ERROR", "ZIP 中未找到 SKILL.md 文件")
+
+
+def _parse_skill_md(filepath: str) -> tuple[str, str]:
     """Parse SKILL.md, returns (name, description) from YAML frontmatter."""
+    with open(filepath, "r", encoding="utf-8") as f:
+        content = f.read()
+
     match = re.match(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
     if not match:
         raise SkillError("SKILL_PARSE_ERROR", "SKILL.md 缺少 YAML 头 (--- ... ---)")
@@ -44,24 +59,47 @@ def parse_skill_md(content: str) -> tuple[str, str]:
     return name, description
 
 
-async def create_skill(
+async def create_skill_from_zip(
     db: AsyncSession,
     user_id: str,
-    workspace_id: str,
-    filename: str,
-    content: bytes,
+    workspace_id: str | None,
+    zip_bytes: bytes,
     source: str = "private",
 ) -> Skill:
-    name, description = parse_skill_md(content.decode("utf-8"))
+    """Extract a skill zip, find SKILL.md, store as a folder."""
 
-    skill_id = str(uuid.uuid4())
-    skill_folder = os.path.join(settings.skills_storage_path, skill_id)
-    os.makedirs(skill_folder, exist_ok=True)
+    # Extract zip to temp dir first to find SKILL.md
+    with tempfile.TemporaryDirectory() as tmpdir:
+        with zipfile.ZipFile(io.BytesIO(zip_bytes)) as zf:
+            # Security: prevent zip slip
+            for member in zf.infolist():
+                target = os.path.realpath(os.path.join(tmpdir, member.filename))
+                if not target.startswith(os.path.realpath(tmpdir) + os.sep):
+                    raise SkillError("SKILL_PARSE_ERROR", "ZIP 包含非法路径")
 
-    # Write SKILL.md
-    skill_md_path = os.path.join(skill_folder, "SKILL.md")
-    with open(skill_md_path, "wb") as f:
-        f.write(content)
+            zf.extractall(tmpdir)
+
+        # Find SKILL.md — recursive search handles any nesting
+        skill_md_path = _find_skill_md(tmpdir)
+        name, description = _parse_skill_md(skill_md_path)
+
+        # Move to permanent storage
+        skill_id = str(uuid.uuid4())
+        skill_folder = os.path.join(settings.skills_storage_path, skill_id)
+        os.makedirs(skill_folder, exist_ok=True)
+
+        # Copy all extracted files
+        entries = os.listdir(tmpdir)
+        for entry in entries:
+            src = os.path.join(tmpdir, entry)
+            dst = os.path.join(skill_folder, entry)
+            if os.path.isdir(src):
+                shutil.copytree(src, dst)
+            else:
+                shutil.copy2(src, dst)
+
+    # Verify SKILL.md exists in final location
+    final_md = _find_skill_md(skill_folder)
 
     skill = Skill(
         id=skill_id,
@@ -105,9 +143,9 @@ async def get_skill_by_id(db: AsyncSession, skill_id: str) -> Skill | None:
 
 async def get_skill_content(skill_id: str) -> str:
     skill_folder = os.path.join(settings.skills_storage_path, skill_id)
-    skill_md_path = os.path.join(skill_folder, "SKILL.md")
-    if not os.path.exists(skill_md_path):
-        raise SkillError("SKILL_NOT_FOUND", f"Skill 文件不存在: {skill_id}", 404)
+    if not os.path.exists(skill_folder):
+        raise SkillError("SKILL_NOT_FOUND", f"Skill 不存在: {skill_id}", 404)
+    skill_md_path = _find_skill_md(skill_folder)
     with open(skill_md_path, "r", encoding="utf-8") as f:
         return f.read()
 

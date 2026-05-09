@@ -20,6 +20,10 @@ class Settings(BaseSettings):
     skills_storage_path: str = "./storage/skills"
     workspace_storage_path: str = "./storage/workspace"
 
+    # Logging
+    logs_dir: str = "./logs"
+    log_level: str = "INFO"
+
     model_config = {"env_file": ".env", "env_file_encoding": "utf-8"}
 
 
