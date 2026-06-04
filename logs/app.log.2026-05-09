@@ -1,0 +1,314 @@
+2026-05-09 16:47:49 | INFO    | app | Application starting up...
+2026-05-09 16:47:49 | INFO    | app | Database tables initialized
+2026-05-09 16:50:58 | INFO    | app | POST /api/v1/auth/register → 200 (391ms)
+2026-05-09 16:50:58 | INFO    | app | GET /api/v1/skills → 200 (20ms)
+2026-05-09 16:50:58 | INFO    | app | GET /api/v1/skills/public → 200 (8ms)
+2026-05-09 16:56:21 | INFO    | app | Application shutting down
+2026-05-09 16:56:28 | INFO    | app | Application starting up...
+2026-05-09 16:56:28 | INFO    | app | Database tables initialized
+2026-05-09 16:56:46 | INFO    | app | Application shutting down
+2026-05-09 16:56:51 | INFO    | app | Application starting up...
+2026-05-09 16:56:51 | INFO    | app | Database tables initialized
+2026-05-09 16:57:11 | INFO    | app | Application shutting down
+2026-05-09 16:57:16 | INFO    | app | Application starting up...
+2026-05-09 16:57:16 | INFO    | app | Database tables initialized
+2026-05-09 16:57:53 | INFO    | app | GET /api/v1/skills/public → 200 (12ms)
+2026-05-09 16:57:53 | INFO    | app | GET /api/v1/skills → 200 (62ms)
+2026-05-09 16:58:16 | INFO    | app | GET /api/v1/skills → 200 (16ms)
+2026-05-09 16:58:16 | INFO    | app | GET /api/v1/skills/public → 200 (9ms)
+2026-05-09 16:58:18 | INFO    | app | GET /api/v1/skills → 200 (11ms)
+2026-05-09 16:58:18 | INFO    | app | GET /api/v1/skills/public → 200 (8ms)
+2026-05-09 17:06:40 | ERROR   | app | Unhandled error on /api/v1/skills/upload
+Traceback (most recent call last):
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/home/zero/miniconda3/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/app/main.py", line 46, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/app/routers/skills.py", line 64, in upload_skill
+    skill = await skill_service.create_skill_from_zip(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/mnt/c/Users/27267/Projects/agent-skills/app/services/skill_service.py", line 71, in create_skill_from_zip
+    with zipfile.ZipFile(zip_bytes) as zf:
+         ~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/zero/miniconda3/lib/python3.13/zipfile/__init__.py", line 1401, in __init__
+    self._RealGetContents()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/zero/miniconda3/lib/python3.13/zipfile/__init__.py", line 1464, in _RealGetContents
+    endrec = _EndRecData(fp)
+  File "/home/zero/miniconda3/lib/python3.13/zipfile/__init__.py", line 319, in _EndRecData
+    fpin.seek(0, 2)
+    ^^^^^^^^^
+AttributeError: 'bytes' object has no attribute 'seek'
+2026-05-09 17:07:46 | INFO    | app | Application shutting down
+2026-05-09 17:07:53 | INFO    | app | Application starting up...
+2026-05-09 17:07:53 | INFO    | app | Database tables initialized
+2026-05-09 17:08:00 | INFO    | app | Application shutting down
+2026-05-09 17:08:05 | INFO    | app | Application starting up...
+2026-05-09 17:08:05 | INFO    | app | Database tables initialized
+2026-05-09 17:08:46 | INFO    | app | POST /api/v1/skills/upload → 400 (1699ms)
+2026-05-09 17:08:50 | INFO    | app | Application shutting down
+2026-05-09 17:08:55 | INFO    | app | Application starting up...
+2026-05-09 17:08:55 | INFO    | app | Database tables initialized
+2026-05-09 17:10:54 | INFO    | app | POST /api/v1/skills/upload → 400 (1655ms)
+2026-05-09 17:10:55 | INFO    | app | Application shutting down
+2026-05-09 17:11:00 | INFO    | app | Application starting up...
+2026-05-09 17:11:00 | INFO    | app | Database tables initialized
+2026-05-09 17:11:57 | INFO    | app | POST /api/v1/skills/upload → 400 (1653ms)
+2026-05-09 17:11:58 | INFO    | app | Application shutting down
+2026-05-09 17:12:02 | INFO    | app | Application starting up...
+2026-05-09 17:12:02 | INFO    | app | Database tables initialized
+2026-05-09 17:12:38 | INFO    | app | POST /api/v1/skills/upload → 400 (1670ms)
+2026-05-09 17:12:46 | INFO    | app | Application shutting down
+2026-05-09 17:12:51 | INFO    | app | Application starting up...
+2026-05-09 17:12:51 | INFO    | app | Database tables initialized
+2026-05-09 17:14:25 | INFO    | app | Application shutting down
+2026-05-09 17:14:30 | INFO    | app | Application starting up...
+2026-05-09 17:14:30 | INFO    | app | Database tables initialized
+2026-05-09 17:14:50 | INFO    | app | Application shutting down
+2026-05-09 17:14:55 | INFO    | app | Application starting up...
+2026-05-09 17:14:55 | INFO    | app | Database tables initialized
+2026-05-09 17:15:03 | ERROR   | app | Unhandled error on /api/v1/skills/upload
+Traceback (most recent call last):
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/home/zero/miniconda3/lib/python3.13/contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 87, in collapse_excgroups
+    raise exc
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/app/main.py", line 46, in log_requests
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 96, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 154, in simple_response
+    await self.app(scope, receive, send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/app/routers/skills.py", line 64, in upload_skill
+    skill = await skill_service.create_skill_from_zip(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "/mnt/c/Users/27267/Projects/agent-skills/app/services/skill_service.py", line 92, in create_skill_from_zip
+    for entry in entries:
+                 ^^^^^^^
+NameError: name 'entries' is not defined
+2026-05-09 17:16:51 | INFO    | app | Application shutting down
+2026-05-09 17:16:58 | INFO    | app | Application starting up...
+2026-05-09 17:16:58 | INFO    | app | Database tables initialized
+2026-05-09 17:17:23 | INFO    | app | POST /api/v1/skills/upload → 200 (1453ms)
+2026-05-09 17:17:23 | INFO    | app | GET /api/v1/skills → 200 (10ms)
+2026-05-09 17:17:25 | INFO    | app | Application shutting down
+2026-05-09 17:17:31 | INFO    | app | Application starting up...
+2026-05-09 17:17:31 | INFO    | app | Database tables initialized
+2026-05-09 17:17:37 | INFO    | app | GET /api/v1/conversations → 200 (47ms)
+2026-05-09 17:17:39 | INFO    | app | GET /api/v1/skills/public → 200 (8ms)
+2026-05-09 17:17:39 | INFO    | app | GET /api/v1/skills → 200 (20ms)
+2026-05-09 17:23:24 | INFO    | app | Application shutting down
+2026-05-09 17:23:28 | INFO    | app | Application starting up...
+2026-05-09 17:23:28 | INFO    | app | Database tables initialized
+2026-05-09 17:24:49 | WARNING | app | Auth error on /api/v1/conversations: 无效的令牌
+2026-05-09 17:24:49 | INFO    | app | GET /api/v1/conversations → 401 (35ms)
+2026-05-09 17:24:56 | WARNING | app | Auth error on /api/v1/auth/login: 用户名或密码错误
+2026-05-09 17:24:56 | INFO    | app | POST /api/v1/auth/login → 401 (178ms)
+2026-05-09 17:25:02 | INFO    | app | POST /api/v1/auth/login → 200 (166ms)
+2026-05-09 17:25:02 | INFO    | app | GET /api/v1/skills → 200 (19ms)
+2026-05-09 17:25:02 | INFO    | app | GET /api/v1/skills/public → 200 (8ms)
+2026-05-09 17:25:07 | INFO    | app | GET /api/v1/conversations → 200 (11ms)
+2026-05-09 17:25:09 | INFO    | app | GET /api/v1/skills → 200 (10ms)
+2026-05-09 17:25:09 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
+2026-05-09 17:25:35 | INFO    | app | POST /api/v1/conversations → 200 (44ms)
+2026-05-09 17:25:36 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-09 17:25:36 | INFO    | app | GET /api/v1/conversations/609476c5-cf6d-43a3-9b33-9b481ded6939 → 200 (12ms)
+2026-05-09 17:25:36 | INFO    | app | GET /api/v1/conversations/609476c5-cf6d-43a3-9b33-9b481ded6939/messages?limit=100 → 200 (20ms)
+2026-05-09 17:25:38 | INFO    | app | GET /api/v1/conversations → 200 (10ms)
+2026-05-09 17:25:40 | INFO    | app | DELETE /api/v1/conversations/609476c5-cf6d-43a3-9b33-9b481ded6939 → 200 (38ms)
+2026-05-09 17:25:42 | INFO    | app | GET /api/v1/skills/public → 200 (6ms)
+2026-05-09 17:25:42 | INFO    | app | GET /api/v1/skills → 200 (10ms)
+2026-05-09 17:27:47 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-09 17:27:47 | INFO    | app | GET /api/v1/models → 200 (7ms)
+2026-05-09 17:27:50 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-09 17:27:50 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-09 17:27:52 | INFO    | app | GET /api/v1/skills → 200 (10ms)
+2026-05-09 17:27:52 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
+2026-05-09 17:28:06 | INFO    | app | POST /api/v1/conversations → 200 (39ms)
+2026-05-09 17:28:06 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-09 17:28:06 | INFO    | app | GET /api/v1/conversations/059f77ae-2cb6-45ae-81cd-a4a43e50890c → 200 (10ms)
+2026-05-09 17:28:06 | INFO    | app | GET /api/v1/conversations/059f77ae-2cb6-45ae-81cd-a4a43e50890c/messages?limit=100 → 200 (12ms)
+2026-05-09 17:28:20 | INFO    | agent | [conv=059f77ae] Starting agent run, model=glm-4-flash, skills=1
+2026-05-09 17:28:20 | INFO    | app | POST /api/v1/conversations/059f77ae-2cb6-45ae-81cd-a4a43e50890c/messages → 200 (12ms)
+2026-05-09 17:28:20 | INFO    | agent | [conv=059f77ae] Built registry: 6 builtin + 1 skill tools
+2026-05-09 17:28:20 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=2, tools=7
+2026-05-09 17:28:22 | INFO    | agent | [conv=059f77ae] Tool docx completed (ok, 20056 chars)
+2026-05-09 17:28:22 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=4, tools=7
+2026-05-09 17:28:24 | INFO    | agent | [conv=059f77ae] Agent run complete: 1 tool calls, 47 chars output
+2026-05-09 17:33:09 | INFO    | app | Application shutting down
+2026-05-09 17:33:13 | INFO    | app | Application starting up...
+2026-05-09 17:33:13 | INFO    | app | Database tables initialized
+2026-05-09 17:33:31 | INFO    | app | Application shutting down
+2026-05-09 17:33:36 | INFO    | app | Application starting up...
+2026-05-09 17:33:36 | INFO    | app | Database tables initialized
+2026-05-09 17:34:44 | INFO    | app | Application shutting down
+2026-05-09 17:34:49 | INFO    | app | Application starting up...
+2026-05-09 17:34:49 | INFO    | app | Database tables initialized
+2026-05-09 17:34:52 | INFO    | app | Application shutting down
+2026-05-09 17:34:57 | INFO    | app | Application starting up...
+2026-05-09 17:34:57 | INFO    | app | Database tables initialized
+2026-05-09 17:35:01 | INFO    | app | Application starting up...
+2026-05-09 17:35:01 | INFO    | app | Database tables initialized
+2026-05-09 17:35:01 | INFO    | app | GET /api/v1/conversations → 200 (46ms)
+2026-05-09 17:35:01 | INFO    | app | GET /api/v1/models → 200 (8ms)
+2026-05-09 17:35:09 | INFO    | app | DELETE /api/v1/conversations/059f77ae-2cb6-45ae-81cd-a4a43e50890c → 200 (43ms)
+2026-05-09 17:35:10 | INFO    | app | GET /api/v1/skills → 200 (16ms)
+2026-05-09 17:35:11 | INFO    | app | GET /api/v1/skills/public → 200 (10ms)
+2026-05-09 17:35:19 | INFO    | app | POST /api/v1/conversations → 200 (44ms)
+2026-05-09 17:35:19 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-09 17:35:19 | INFO    | app | GET /api/v1/conversations/1fd84261-0888-43d2-a6fc-b47da1fa432c → 200 (12ms)
+2026-05-09 17:35:20 | INFO    | app | GET /api/v1/conversations/1fd84261-0888-43d2-a6fc-b47da1fa432c/messages?limit=100 → 200 (17ms)
+2026-05-09 17:35:41 | INFO    | agent | [conv=1fd84261] Starting agent run, model=glm-4-flash, skills=1
+2026-05-09 17:35:41 | INFO    | app | POST /api/v1/conversations/1fd84261-0888-43d2-a6fc-b47da1fa432c/messages → 200 (12ms)
+2026-05-09 17:35:41 | INFO    | agent | [conv=1fd84261] Built registry: 6 builtin + 1 skill tools
+2026-05-09 17:35:41 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=2, tools=7
+2026-05-09 17:35:42 | INFO    | agent | [conv=1fd84261] Tool docx completed (ok, 20056 chars)
+2026-05-09 17:35:42 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=4, tools=7
+2026-05-09 17:35:50 | INFO    | agent | [conv=1fd84261] Tool write_file completed (ok, 47 chars)
+2026-05-09 17:35:50 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=6, tools=7
+2026-05-09 17:35:53 | INFO    | agent | [conv=1fd84261] Agent run complete: 2 tool calls, 49 chars output
+2026-05-09 17:42:11 | INFO    | app | GET /api/v1/conversations → 200 (17ms)
+2026-05-09 17:42:11 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-09 17:42:12 | INFO    | app | DELETE /api/v1/conversations/1fd84261-0888-43d2-a6fc-b47da1fa432c → 200 (30ms)
+2026-05-09 17:42:14 | INFO    | app | GET /api/v1/skills → 200 (9ms)
+2026-05-09 17:42:14 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
+2026-05-09 17:42:22 | INFO    | app | POST /api/v1/conversations → 200 (33ms)
+2026-05-09 17:42:23 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-09 17:42:23 | INFO    | app | GET /api/v1/conversations/fc4895f9-de10-41c9-8931-8a10c90f0b36 → 200 (10ms)
+2026-05-09 17:42:23 | INFO    | app | GET /api/v1/conversations/fc4895f9-de10-41c9-8931-8a10c90f0b36/messages?limit=100 → 200 (12ms)
+2026-05-09 17:42:33 | INFO    | agent | [conv=fc4895f9] Starting agent run, model=glm-4-flash, skills=1
+2026-05-09 17:42:33 | INFO    | app | POST /api/v1/conversations/fc4895f9-de10-41c9-8931-8a10c90f0b36/messages → 200 (13ms)
+2026-05-09 17:42:33 | INFO    | agent | [conv=fc4895f9] Built registry: 6 builtin + 1 skill tools
+2026-05-09 17:42:33 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=2, tools=7
+2026-05-09 17:42:34 | INFO    | agent | [conv=fc4895f9] Tool docx completed (ok, 2326 chars)
+2026-05-09 17:42:34 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=4, tools=7
+2026-05-09 17:42:38 | INFO    | agent | [conv=fc4895f9] Agent run complete: 1 tool calls, 54 chars output
+2026-05-09 17:43:10 | INFO    | app | GET /api/v1/conversations → 200 (13ms)
+2026-05-09 17:43:10 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-09 17:43:11 | INFO    | app | DELETE /api/v1/conversations/fc4895f9-de10-41c9-8931-8a10c90f0b36 → 200 (32ms)
+2026-05-09 17:43:12 | INFO    | app | GET /api/v1/skills → 200 (9ms)
+2026-05-09 17:43:12 | INFO    | app | GET /api/v1/skills/public → 200 (8ms)
+2026-05-09 17:43:17 | INFO    | app | POST /api/v1/conversations → 200 (41ms)
+2026-05-09 17:43:18 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-09 17:43:18 | INFO    | app | GET /api/v1/conversations/3af732e2-6918-4961-9555-84b1323013f9 → 200 (9ms)
+2026-05-09 17:43:18 | INFO    | app | GET /api/v1/conversations/3af732e2-6918-4961-9555-84b1323013f9/messages?limit=100 → 200 (11ms)
+2026-05-09 17:43:25 | INFO    | agent | [conv=3af732e2] Starting agent run, model=glm-4-flash, skills=1
+2026-05-09 17:43:25 | INFO    | app | POST /api/v1/conversations/3af732e2-6918-4961-9555-84b1323013f9/messages → 200 (10ms)
+2026-05-09 17:43:25 | INFO    | agent | [conv=3af732e2] Built registry: 6 builtin + 1 skill tools
+2026-05-09 17:43:25 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=2, tools=7
+2026-05-09 17:43:26 | INFO    | agent | [conv=3af732e2] Tool docx completed (ok, 2326 chars)
+2026-05-09 17:43:26 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=4, tools=7
+2026-05-09 17:43:29 | INFO    | agent | [conv=3af732e2] Agent run complete: 1 tool calls, 82 chars output
+2026-05-09 17:44:00 | INFO    | agent | [conv=3af732e2] Starting agent run, model=glm-4-flash, skills=1
+2026-05-09 17:44:00 | INFO    | app | POST /api/v1/conversations/3af732e2-6918-4961-9555-84b1323013f9/messages → 200 (10ms)
+2026-05-09 17:44:00 | INFO    | agent | [conv=3af732e2] Built registry: 6 builtin + 1 skill tools
+2026-05-09 17:44:00 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=5, tools=7
+2026-05-09 17:44:02 | INFO    | agent | [conv=3af732e2] Tool execute_bash completed (ok, 11 chars)
+2026-05-09 17:44:02 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=7, tools=7
+2026-05-09 17:44:05 | INFO    | agent | [conv=3af732e2] Tool write_file completed (ok, 37 chars)
+2026-05-09 17:44:05 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=9, tools=7
+2026-05-09 17:44:10 | INFO    | agent | [conv=3af732e2] Agent run complete: 2 tool calls, 117 chars output

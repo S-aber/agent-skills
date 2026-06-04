@@ -452,3 +452,48 @@ body {
   color: #a16207;
   margin-bottom: 8px;
 }
+
+/* Upload area */
+.upload-btn {
+  padding: 8px 10px;
+  flex-shrink: 0;
+}
+.upload-files-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+}
+.upload-file-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 6px 3px 8px;
+  background: #f1f5f9;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 12px;
+}
+.upload-file-icon {
+  font-size: 12px;
+}
+.upload-file-name {
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text);
+}
+.upload-file-remove {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1;
+  padding: 0 2px;
+}
+.upload-file-remove:hover {
+  color: var(--danger);
+}

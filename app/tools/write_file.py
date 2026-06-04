@@ -41,8 +41,18 @@ class WriteFileTool(Tool):
         }
 
     async def execute(self, input: dict, context: ToolContext) -> ToolResult:
-        file_path = input["file_path"]
-        content = input["content"]
+        file_path = input.get("file_path")
+        content = input.get("content")
+        if not file_path:
+            return ToolResult(
+                content="Error: Missing required parameter 'file_path'.",
+                is_error=True,
+            )
+        if content is None:
+            return ToolResult(
+                content="Error: Missing required parameter 'content'.",
+                is_error=True,
+            )
         encoding = input.get("encoding", "utf-8")
         full_path = os.path.join(context.working_dir, file_path)
 

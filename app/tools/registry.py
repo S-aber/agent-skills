@@ -31,9 +31,13 @@ class ToolRegistry:
         return list(self._tools.values())
 
     def clear_dynamic(self):
-        """Remove dynamically registered tools (skills), keep built-ins."""
+        """Remove dynamically registered tools (skills + mcp), keep built-ins."""
         builtin_names = {t.name for t in get_builtin_tools()}
         self._tools = {k: v for k, v in self._tools.items() if k in builtin_names}
+
+    def clear_mcp(self):
+        """Remove MCP tools only (names starting with 'mcp__')."""
+        self._tools = {k: v for k, v in self._tools.items() if not k.startswith("mcp__")}
 
 
 def get_builtin_tools() -> list[Tool]:

@@ -28,7 +28,7 @@ function formatInput(obj) {
         {{ toolCall.name }}
       </span>
       <span style="font-size:11px;color:var(--text-muted)">
-        {{ toolCall.result ? (toolCall.is_error ? '✗ 失败' : '✓ 完成') : '执行中...' }}
+        {{ toolCall.result !== undefined ? (toolCall.is_error ? '✗ 失败' : '✓ 完成') : '执行中...' }}
       </span>
     </div>
     <div v-if="expanded" class="tool-call-body">

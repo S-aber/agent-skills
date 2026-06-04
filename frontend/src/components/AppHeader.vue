@@ -12,6 +12,7 @@ const router = useRouter()
     <div class="navbar-links" v-if="isLoggedIn">
       <router-link to="/skills">Skills</router-link>
       <router-link to="/conversations">会话</router-link>
+      <router-link to="/mcp">MCP</router-link>
     </div>
     <div class="navbar-right" v-if="isLoggedIn">
       <span>{{ username }}</span>

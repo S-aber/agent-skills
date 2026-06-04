@@ -4,7 +4,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from app.database import init_db
-from app.routers import auth, skills, conversations, messages, models_router
+from app.routers import auth, skills, conversations, messages, models_router, uploads, mcp
 from app.services.auth_service import AuthError
 from app.services.skill_service import SkillError
 from app.services.llm_service import LLMError
@@ -61,6 +61,8 @@ app.include_router(skills.router)
 app.include_router(conversations.router)
 app.include_router(messages.router)
 app.include_router(models_router.router)
+app.include_router(uploads.router)
+app.include_router(mcp.router)
 
 
 # Global exception handlers

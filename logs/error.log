@@ -1,144 +1,85 @@
-2026-05-09 17:06:40 | ERROR   | app | Unhandled error on /api/v1/skills/upload
+2026-05-14 15:27:56 | ERROR   | agent | [conv=9fea71e7] Tool write_file execution failed
 Traceback (most recent call last):
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
-    with recv_stream, send_stream, collapse_excgroups():
-                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/app/services/agent_service.py", line 280, in run_agent
+    result = await tool.execute(tool_input, tool_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/app/tools/write_file.py", line 44, in execute
+    file_path = input["file_path"]
+                ~~~~~^^^^^^^^^^^^^
+KeyError: 'file_path'
+2026-05-14 15:30:43 | ERROR   | agent | [conv=9fea71e7] Unexpected error in agent loop
+Traceback (most recent call last):
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 72, in map_httpcore_exceptions
+    yield
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 257, in __aiter__
+    async for part in self._httpcore_stream:
+        yield part
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 407, in __aiter__
+    raise exc from None
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 403, in __aiter__
+    async for part in self._stream:
+        yield part
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_async/http11.py", line 342, in __aiter__
+    raise exc
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_async/http11.py", line 334, in __aiter__
+    async for chunk in self._connection._receive_response_body(**kwargs):
+        yield chunk
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_async/http11.py", line 203, in _receive_response_body
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_async/http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.READ_NUM_BYTES, timeout=timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
   File "/home/zero/miniconda3/lib/python3.13/contextlib.py", line 162, in __exit__
     self.gen.throw(value)
     ~~~~~~~~~~~~~~^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 87, in collapse_excgroups
-    raise exc
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
-    response = await self.dispatch_func(request, call_next)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/app/main.py", line 46, in log_requests
-    response = await call_next(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
-    raise app_exc from app_exc.__cause__ or app_exc.__context__
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
-    await self.app(scope, receive_or_disconnect, send_no_error)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 96, in __call__
-    await self.simple_response(scope, receive, send, request_headers=headers)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 154, in simple_response
-    await self.app(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 660, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 680, in app
-    await route.handle(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 276, in handle
-    await self.app(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 134, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 120, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 674, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/app/routers/skills.py", line 64, in upload_skill
-    skill = await skill_service.create_skill_from_zip(
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<5 lines>...
-    )
-    ^
-  File "/mnt/c/Users/27267/Projects/agent-skills/app/services/skill_service.py", line 71, in create_skill_from_zip
-    with zipfile.ZipFile(zip_bytes) as zf:
-         ~~~~~~~~~~~~~~~^^^^^^^^^^^
-  File "/home/zero/miniconda3/lib/python3.13/zipfile/__init__.py", line 1401, in __init__
-    self._RealGetContents()
-    ~~~~~~~~~~~~~~~~~~~~~^^
-  File "/home/zero/miniconda3/lib/python3.13/zipfile/__init__.py", line 1464, in _RealGetContents
-    endrec = _EndRecData(fp)
-  File "/home/zero/miniconda3/lib/python3.13/zipfile/__init__.py", line 319, in _EndRecData
-    fpin.seek(0, 2)
-    ^^^^^^^^^
-AttributeError: 'bytes' object has no attribute 'seek'
-2026-05-09 17:15:03 | ERROR   | app | Unhandled error on /api/v1/skills/upload
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
-    with recv_stream, send_stream, collapse_excgroups():
-                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/app/services/agent_service.py", line 253, in run_agent
+    async for event in chat_stream(model_id, messages, tool_defs):
+    ...<60 lines>...
+                yield f"event: error\ndata: {json.dumps({'type': 'error', 'code': 'TOOL_NOT_FOUND', 'message': f'Tool not found: {tool_name}'})}\n\n"
+  File "/mnt/c/Users/27267/Projects/agent-skills/app/services/llm_service.py", line 71, in chat_stream
+    async for line in response.aiter_lines():
+    ...<37 lines>...
+                buf["arguments"] += tc["function"]["arguments"]
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_models.py", line 965, in aiter_lines
+    async for text in self.aiter_text():
+        for line in decoder.decode(text):
+            yield line
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_models.py", line 952, in aiter_text
+    async for byte_content in self.aiter_bytes():
+    ...<2 lines>...
+            yield chunk
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_models.py", line 931, in aiter_bytes
+    async for raw_bytes in self.aiter_raw():
+    ...<2 lines>...
+            yield chunk
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_models.py", line 989, in aiter_raw
+    async for raw_stream_bytes in self.stream:
+    ...<2 lines>...
+            yield chunk
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_client.py", line 150, in __aiter__
+    async for chunk in self._stream:
+        yield chunk
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 256, in __aiter__
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
   File "/home/zero/miniconda3/lib/python3.13/contextlib.py", line 162, in __exit__
     self.gen.throw(value)
     ~~~~~~~~~~~~~~^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 87, in collapse_excgroups
-    raise exc
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
-    response = await self.dispatch_func(request, call_next)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/app/main.py", line 46, in log_requests
-    response = await call_next(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
-    raise app_exc from app_exc.__cause__ or app_exc.__context__
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
-    await self.app(scope, receive_or_disconnect, send_no_error)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 96, in __call__
-    await self.simple_response(scope, receive, send, request_headers=headers)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 154, in simple_response
-    await self.app(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 660, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 680, in app
-    await route.handle(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 276, in handle
-    await self.app(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 134, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 120, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 674, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/app/routers/skills.py", line 64, in upload_skill
-    skill = await skill_service.create_skill_from_zip(
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<5 lines>...
-    )
-    ^
-  File "/mnt/c/Users/27267/Projects/agent-skills/app/services/skill_service.py", line 92, in create_skill_from_zip
-    for entry in entries:
-                 ^^^^^^^
-NameError: name 'entries' is not defined
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 89, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout

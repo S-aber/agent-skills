@@ -25,7 +25,12 @@ class WebFetchTool(Tool):
         }
 
     async def execute(self, input: dict, context: ToolContext) -> ToolResult:
-        url = input["url"]
+        url = input.get("url")
+        if not url:
+            return ToolResult(
+                content="Error: Missing required parameter 'url'.",
+                is_error=True,
+            )
 
         try:
             async with httpx.AsyncClient(timeout=15.0, follow_redirects=True) as client:

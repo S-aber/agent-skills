@@ -1,314 +1,832 @@
-2026-05-09 16:47:49 | INFO    | app | Application starting up...
-2026-05-09 16:47:49 | INFO    | app | Database tables initialized
-2026-05-09 16:50:58 | INFO    | app | POST /api/v1/auth/register → 200 (391ms)
-2026-05-09 16:50:58 | INFO    | app | GET /api/v1/skills → 200 (20ms)
-2026-05-09 16:50:58 | INFO    | app | GET /api/v1/skills/public → 200 (8ms)
-2026-05-09 16:56:21 | INFO    | app | Application shutting down
-2026-05-09 16:56:28 | INFO    | app | Application starting up...
-2026-05-09 16:56:28 | INFO    | app | Database tables initialized
-2026-05-09 16:56:46 | INFO    | app | Application shutting down
-2026-05-09 16:56:51 | INFO    | app | Application starting up...
-2026-05-09 16:56:51 | INFO    | app | Database tables initialized
-2026-05-09 16:57:11 | INFO    | app | Application shutting down
-2026-05-09 16:57:16 | INFO    | app | Application starting up...
-2026-05-09 16:57:16 | INFO    | app | Database tables initialized
-2026-05-09 16:57:53 | INFO    | app | GET /api/v1/skills/public → 200 (12ms)
-2026-05-09 16:57:53 | INFO    | app | GET /api/v1/skills → 200 (62ms)
-2026-05-09 16:58:16 | INFO    | app | GET /api/v1/skills → 200 (16ms)
-2026-05-09 16:58:16 | INFO    | app | GET /api/v1/skills/public → 200 (9ms)
-2026-05-09 16:58:18 | INFO    | app | GET /api/v1/skills → 200 (11ms)
-2026-05-09 16:58:18 | INFO    | app | GET /api/v1/skills/public → 200 (8ms)
-2026-05-09 17:06:40 | ERROR   | app | Unhandled error on /api/v1/skills/upload
+2026-05-14 09:49:34 | INFO    | app | Application starting up...
+2026-05-14 09:49:34 | INFO    | app | Database tables initialized
+2026-05-14 09:51:17 | WARNING | app | Auth error on /api/v1/skills: 无效的令牌
+2026-05-14 09:51:17 | INFO    | app | GET /api/v1/skills → 401 (40ms)
+2026-05-14 09:51:17 | INFO    | app | GET /api/v1/skills/public → 200 (11ms)
+2026-05-14 09:51:25 | WARNING | app | Auth error on /api/v1/skills: 无效的令牌
+2026-05-14 09:51:25 | INFO    | app | GET /api/v1/skills → 401 (1ms)
+2026-05-14 09:51:25 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
+2026-05-14 09:51:31 | WARNING | app | Auth error on /api/v1/skills: 无效的令牌
+2026-05-14 09:51:31 | INFO    | app | GET /api/v1/skills → 401 (1ms)
+2026-05-14 09:51:31 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
+2026-05-14 09:51:48 | INFO    | app | POST /api/v1/auth/login → 200 (189ms)
+2026-05-14 09:51:48 | INFO    | app | GET /api/v1/skills → 200 (12ms)
+2026-05-14 09:51:48 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
+2026-05-14 09:51:53 | INFO    | app | DELETE /api/v1/skills/794b5d12-36c4-4b35-b6d7-14bbd914d0b4 → 200 (130ms)
+2026-05-14 09:51:59 | INFO    | app | Application shutting down
+2026-05-14 09:52:04 | INFO    | app | Application starting up...
+2026-05-14 09:52:04 | INFO    | app | Database tables initialized
+2026-05-14 09:52:04 | INFO    | app | POST /api/v1/skills/upload → 200 (99ms)
+2026-05-14 09:52:04 | INFO    | app | GET /api/v1/skills → 200 (10ms)
+2026-05-14 09:52:12 | INFO    | app | GET /api/v1/conversations → 200 (16ms)
+2026-05-14 09:52:12 | INFO    | app | GET /api/v1/models → 200 (7ms)
+2026-05-14 09:52:16 | INFO    | app | DELETE /api/v1/conversations/3af732e2-6918-4961-9555-84b1323013f9 → 200 (34ms)
+2026-05-14 09:52:17 | INFO    | app | GET /api/v1/skills → 200 (8ms)
+2026-05-14 09:52:17 | INFO    | app | GET /api/v1/skills/public → 200 (8ms)
+2026-05-14 09:52:28 | INFO    | app | POST /api/v1/conversations → 200 (44ms)
+2026-05-14 09:52:28 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-14 09:52:28 | INFO    | app | GET /api/v1/conversations/deb32dc0-3cce-43eb-bba1-1738c4aa26a8 → 200 (12ms)
+2026-05-14 09:52:28 | INFO    | app | GET /api/v1/conversations/deb32dc0-3cce-43eb-bba1-1738c4aa26a8/messages?limit=100 → 200 (20ms)
+2026-05-14 10:18:00 | INFO    | app | Application shutting down
+2026-05-14 10:18:05 | INFO    | app | Application starting up...
+2026-05-14 10:18:05 | INFO    | app | Database tables initialized
+2026-05-14 10:18:13 | INFO    | app | Application shutting down
+2026-05-14 10:18:18 | INFO    | app | Application starting up...
+2026-05-14 10:18:18 | INFO    | app | Database tables initialized
+2026-05-14 10:19:20 | INFO    | app | GET /api/v1/conversations/deb32dc0-3cce-43eb-bba1-1738c4aa26a8 → 200 (49ms)
+2026-05-14 10:19:20 | INFO    | app | GET /api/v1/conversations/deb32dc0-3cce-43eb-bba1-1738c4aa26a8/messages?limit=100 → 200 (19ms)
+2026-05-14 10:20:47 | INFO    | app | POST /api/v1/files/upload?conversation_id=deb32dc0-3cce-43eb-bba1-1738c4aa26a8 → 200 (50ms)
+2026-05-14 10:20:48 | INFO    | agent | [conv=deb32dc0] Starting agent run, model=glm-4-flash, skills=1
+2026-05-14 10:20:48 | INFO    | app | POST /api/v1/conversations/deb32dc0-3cce-43eb-bba1-1738c4aa26a8/messages → 200 (11ms)
+2026-05-14 10:20:48 | INFO    | agent | [conv=deb32dc0] Built registry: 6 builtin + 1 skill tools
+2026-05-14 10:20:48 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=2, tools=7
+2026-05-14 10:20:51 | INFO    | agent | [conv=deb32dc0] Tool read_file completed (error, 99 chars)
+2026-05-14 10:20:51 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=4, tools=7
+2026-05-14 10:21:02 | INFO    | agent | [conv=deb32dc0] Tool execute_python completed (error, 1036 chars)
+2026-05-14 10:21:02 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=6, tools=7
+2026-05-14 10:21:06 | INFO    | agent | [conv=deb32dc0] Tool execute_bash completed (error, 56 chars)
+2026-05-14 10:21:06 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=8, tools=7
+2026-05-14 10:21:14 | INFO    | agent | [conv=deb32dc0] Agent run complete: 3 tool calls, 204 chars output
+2026-05-14 10:24:28 | INFO    | app | GET /api/v1/conversations → 200 (17ms)
+2026-05-14 10:24:28 | INFO    | app | GET /api/v1/models → 200 (6ms)
+2026-05-14 10:24:30 | INFO    | app | DELETE /api/v1/conversations/deb32dc0-3cce-43eb-bba1-1738c4aa26a8 → 200 (46ms)
+2026-05-14 10:24:31 | INFO    | app | GET /api/v1/skills → 200 (25ms)
+2026-05-14 10:24:31 | INFO    | app | GET /api/v1/skills/public → 200 (8ms)
+2026-05-14 10:24:39 | INFO    | app | POST /api/v1/conversations → 200 (30ms)
+2026-05-14 10:24:39 | INFO    | app | GET /api/v1/conversations → 200 (8ms)
+2026-05-14 10:24:39 | INFO    | app | GET /api/v1/conversations/c8c6ca17-eade-4666-a0cc-47b37c1b9ec5 → 200 (9ms)
+2026-05-14 10:24:39 | INFO    | app | GET /api/v1/conversations/c8c6ca17-eade-4666-a0cc-47b37c1b9ec5/messages?limit=100 → 200 (10ms)
+2026-05-14 10:24:46 | INFO    | app | POST /api/v1/files/upload?conversation_id=c8c6ca17-eade-4666-a0cc-47b37c1b9ec5 → 200 (41ms)
+2026-05-14 10:24:46 | INFO    | agent | [conv=c8c6ca17] Starting agent run, model=glm-4-flash, skills=1
+2026-05-14 10:24:46 | INFO    | app | POST /api/v1/conversations/c8c6ca17-eade-4666-a0cc-47b37c1b9ec5/messages → 200 (9ms)
+2026-05-14 10:24:46 | INFO    | agent | [conv=c8c6ca17] Built registry: 6 builtin + 1 skill tools
+2026-05-14 10:24:46 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=2, tools=7
+2026-05-14 10:24:53 | INFO    | agent | [conv=c8c6ca17] Tool read_file completed (error, 100 chars)
+2026-05-14 10:24:53 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=4, tools=7
+2026-05-14 10:24:57 | INFO    | agent | [conv=c8c6ca17] Agent run complete: 1 tool calls, 84 chars output
+2026-05-14 10:25:13 | INFO    | agent | [conv=c8c6ca17] Starting agent run, model=glm-4-flash, skills=1
+2026-05-14 10:25:13 | INFO    | app | POST /api/v1/conversations/c8c6ca17-eade-4666-a0cc-47b37c1b9ec5/messages → 200 (11ms)
+2026-05-14 10:25:13 | INFO    | agent | [conv=c8c6ca17] Built registry: 6 builtin + 1 skill tools
+2026-05-14 10:25:13 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=5, tools=7
+2026-05-14 10:25:21 | INFO    | agent | [conv=c8c6ca17] Tool execute_python completed (ok, 11 chars)
+2026-05-14 10:25:21 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=7, tools=7
+2026-05-14 10:25:30 | INFO    | agent | [conv=c8c6ca17] Tool execute_python completed (ok, 11 chars)
+2026-05-14 10:25:30 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=9, tools=7
+2026-05-14 10:25:34 | INFO    | agent | [conv=c8c6ca17] Agent run complete: 2 tool calls, 135 chars output
+2026-05-14 10:26:01 | INFO    | agent | [conv=c8c6ca17] Starting agent run, model=glm-4-flash, skills=1
+2026-05-14 10:26:01 | INFO    | app | POST /api/v1/conversations/c8c6ca17-eade-4666-a0cc-47b37c1b9ec5/messages → 200 (10ms)
+2026-05-14 10:26:01 | INFO    | agent | [conv=c8c6ca17] Built registry: 6 builtin + 1 skill tools
+2026-05-14 10:26:01 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=9, tools=7
+2026-05-14 10:26:02 | INFO    | agent | [conv=c8c6ca17] Tool document-pro completed (ok, 1670 chars)
+2026-05-14 10:26:02 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=11, tools=7
+2026-05-14 10:26:06 | INFO    | agent | [conv=c8c6ca17] Agent run complete: 1 tool calls, 172 chars output
+2026-05-14 10:29:23 | INFO    | app | POST /api/v1/files/upload?conversation_id=c8c6ca17-eade-4666-a0cc-47b37c1b9ec5 → 200 (39ms)
+2026-05-14 10:29:23 | INFO    | agent | [conv=c8c6ca17] Starting agent run, model=glm-4-flash, skills=1
+2026-05-14 10:29:23 | INFO    | app | POST /api/v1/conversations/c8c6ca17-eade-4666-a0cc-47b37c1b9ec5/messages → 200 (9ms)
+2026-05-14 10:29:23 | INFO    | agent | [conv=c8c6ca17] Built registry: 6 builtin + 1 skill tools
+2026-05-14 10:29:23 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=12, tools=7
+2026-05-14 10:29:25 | INFO    | agent | [conv=c8c6ca17] Tool read_file completed (error, 100 chars)
+2026-05-14 10:29:25 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=14, tools=7
+2026-05-14 10:29:28 | INFO    | agent | [conv=c8c6ca17] Agent run complete: 1 tool calls, 106 chars output
+2026-05-14 10:29:39 | INFO    | agent | [conv=c8c6ca17] Starting agent run, model=glm-4-flash, skills=1
+2026-05-14 10:29:39 | INFO    | app | POST /api/v1/conversations/c8c6ca17-eade-4666-a0cc-47b37c1b9ec5/messages → 200 (10ms)
+2026-05-14 10:29:39 | INFO    | agent | [conv=c8c6ca17] Built registry: 6 builtin + 1 skill tools
+2026-05-14 10:29:39 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=15, tools=7
+2026-05-14 10:29:41 | INFO    | agent | [conv=c8c6ca17] Tool document-pro completed (ok, 1670 chars)
+2026-05-14 10:29:41 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=17, tools=7
+2026-05-14 10:29:53 | INFO    | agent | [conv=c8c6ca17] Tool execute_python completed (error, 166 chars)
+2026-05-14 10:29:53 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=19, tools=7
+2026-05-14 10:30:00 | INFO    | agent | [conv=c8c6ca17] Tool execute_python completed (ok, 11 chars)
+2026-05-14 10:30:01 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=21, tools=7
+2026-05-14 10:30:06 | INFO    | agent | [conv=c8c6ca17] Agent run complete: 3 tool calls, 160 chars output
+2026-05-14 10:30:25 | INFO    | app | GET /api/v1/conversations → 200 (8ms)
+2026-05-14 10:30:26 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 10:31:05 | INFO    | app | Application shutting down
+2026-05-14 10:31:10 | INFO    | app | Application starting up...
+2026-05-14 10:31:10 | INFO    | app | Database tables initialized
+2026-05-14 10:31:15 | INFO    | app | Application starting up...
+2026-05-14 10:31:15 | INFO    | app | Database tables initialized
+2026-05-14 10:37:23 | INFO    | app | Application shutting down
+2026-05-14 10:37:27 | INFO    | app | Application starting up...
+2026-05-14 10:37:27 | INFO    | app | Database tables initialized
+2026-05-14 10:37:35 | INFO    | app | Application shutting down
+2026-05-14 10:37:40 | INFO    | app | Application starting up...
+2026-05-14 10:37:40 | INFO    | app | Database tables initialized
+2026-05-14 10:39:02 | INFO    | app | Application shutting down
+2026-05-14 10:39:07 | INFO    | app | Application starting up...
+2026-05-14 10:39:07 | INFO    | app | Database tables initialized
+2026-05-14 10:39:27 | INFO    | app | Application shutting down
+2026-05-14 10:39:32 | INFO    | app | Application starting up...
+2026-05-14 10:39:32 | INFO    | app | Database tables initialized
+2026-05-14 10:39:40 | INFO    | app | Application shutting down
+2026-05-14 10:39:45 | INFO    | app | Application starting up...
+2026-05-14 10:39:45 | INFO    | app | Database tables initialized
+2026-05-14 10:42:49 | INFO    | app | GET /api/v1/conversations → 200 (50ms)
+2026-05-14 10:42:49 | INFO    | app | GET /api/v1/models → 200 (7ms)
+2026-05-14 10:42:50 | INFO    | app | DELETE /api/v1/conversations/c8c6ca17-eade-4666-a0cc-47b37c1b9ec5 → 200 (46ms)
+2026-05-14 10:42:52 | INFO    | app | GET /api/v1/skills/public → 200 (8ms)
+2026-05-14 10:42:52 | INFO    | app | GET /api/v1/skills → 200 (19ms)
+2026-05-14 10:43:02 | INFO    | app | POST /api/v1/conversations → 200 (44ms)
+2026-05-14 10:43:03 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-14 10:43:03 | INFO    | app | GET /api/v1/conversations/c109d643-91ac-41cd-99e0-513bc4c3b8af → 200 (12ms)
+2026-05-14 10:43:03 | INFO    | app | GET /api/v1/conversations/c109d643-91ac-41cd-99e0-513bc4c3b8af/messages?limit=100 → 200 (20ms)
+2026-05-14 10:43:03 | INFO    | app | GET /api/v1/uploads/c109d643-91ac-41cd-99e0-513bc4c3b8af → 200 (18ms)
+2026-05-14 10:43:17 | INFO    | app | POST /api/v1/uploads → 200 (26ms)
+2026-05-14 10:44:06 | INFO    | agent | [conv=c109d643] Starting agent run, model=glm-4, skills=1
+2026-05-14 10:44:06 | INFO    | app | POST /api/v1/conversations/c109d643-91ac-41cd-99e0-513bc4c3b8af/messages → 200 (12ms)
+2026-05-14 10:44:06 | INFO    | agent | [conv=c109d643] Built registry: 6 builtin + 1 skill tools
+2026-05-14 10:44:06 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=2, tools=7
+2026-05-14 10:44:07 | INFO    | agent | [conv=c109d643] Tool document-pro completed (ok, 1670 chars)
+2026-05-14 10:44:07 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=4, tools=7
+2026-05-14 10:44:09 | INFO    | agent | [conv=c109d643] Tool read_file completed (error, 96 chars)
+2026-05-14 10:44:09 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=6, tools=7
+2026-05-14 10:44:15 | INFO    | agent | [conv=c109d643] Tool execute_python completed (ok, 79 chars)
+2026-05-14 10:44:15 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=8, tools=7
+2026-05-14 10:44:22 | INFO    | agent | [conv=c109d643] Tool execute_python completed (ok, 137 chars)
+2026-05-14 10:44:22 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=10, tools=7
+2026-05-14 10:44:34 | INFO    | agent | [conv=c109d643] Tool execute_python completed (ok, 100 chars)
+2026-05-14 10:44:34 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=12, tools=7
+2026-05-14 10:44:46 | INFO    | agent | [conv=c109d643] Tool execute_python completed (ok, 200 chars)
+2026-05-14 10:44:46 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=14, tools=7
+2026-05-14 10:45:01 | INFO    | agent | [conv=c109d643] Tool execute_python completed (ok, 10909 chars)
+2026-05-14 10:45:01 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=16, tools=7
+2026-05-14 10:45:15 | INFO    | agent | [conv=c109d643] Agent run complete: 7 tool calls, 1311 chars output
+2026-05-14 13:29:48 | INFO    | app | Application shutting down
+2026-05-14 13:29:52 | INFO    | app | Application starting up...
+2026-05-14 13:29:52 | INFO    | app | Database tables initialized
+2026-05-14 13:30:39 | INFO    | app | Application shutting down
+2026-05-14 13:30:43 | INFO    | app | Application starting up...
+2026-05-14 13:30:43 | INFO    | app | Database tables initialized
+2026-05-14 13:31:41 | INFO    | app | Application shutting down
+2026-05-14 13:31:45 | INFO    | app | Application starting up...
+2026-05-14 13:31:45 | INFO    | app | Database tables initialized
+2026-05-14 13:32:31 | INFO    | app | Application shutting down
+2026-05-14 13:32:36 | INFO    | app | Application starting up...
+2026-05-14 13:32:36 | INFO    | app | Database tables initialized
+2026-05-14 13:39:17 | WARNING | app | Auth error on /api/v1/conversations/c109d643-91ac-41cd-99e0-513bc4c3b8af: 无效的令牌
+2026-05-14 13:39:17 | INFO    | app | GET /api/v1/conversations/c109d643-91ac-41cd-99e0-513bc4c3b8af → 401 (36ms)
+2026-05-14 13:39:17 | WARNING | app | Auth error on /api/v1/conversations/c109d643-91ac-41cd-99e0-513bc4c3b8af/messages: 无效的令牌
+2026-05-14 13:39:17 | INFO    | app | GET /api/v1/conversations/c109d643-91ac-41cd-99e0-513bc4c3b8af/messages?limit=100 → 401 (8ms)
+2026-05-14 13:39:19 | INFO    | app | POST /api/v1/auth/login → 200 (182ms)
+2026-05-14 13:39:20 | INFO    | app | GET /api/v1/skills/public → 200 (9ms)
+2026-05-14 13:39:20 | INFO    | app | GET /api/v1/skills → 200 (21ms)
+2026-05-14 13:39:27 | INFO    | app | GET /api/v1/conversations → 200 (13ms)
+2026-05-14 13:39:27 | INFO    | app | GET /api/v1/models → 200 (7ms)
+2026-05-14 13:39:28 | INFO    | app | GET /api/v1/conversations/c109d643-91ac-41cd-99e0-513bc4c3b8af → 200 (10ms)
+2026-05-14 13:39:29 | INFO    | app | GET /api/v1/conversations/c109d643-91ac-41cd-99e0-513bc4c3b8af/messages?limit=100 → 200 (13ms)
+2026-05-14 13:39:29 | INFO    | app | GET /api/v1/uploads/c109d643-91ac-41cd-99e0-513bc4c3b8af → 200 (25ms)
+2026-05-14 13:39:45 | INFO    | app | GET /api/v1/conversations/c109d643-91ac-41cd-99e0-513bc4c3b8af → 200 (10ms)
+2026-05-14 13:39:45 | INFO    | app | GET /api/v1/conversations/c109d643-91ac-41cd-99e0-513bc4c3b8af/messages?limit=100 → 200 (13ms)
+2026-05-14 13:39:46 | INFO    | app | GET /api/v1/uploads/c109d643-91ac-41cd-99e0-513bc4c3b8af → 200 (18ms)
+2026-05-14 13:39:54 | INFO    | app | GET /api/v1/conversations → 200 (11ms)
+2026-05-14 13:39:54 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 13:39:57 | INFO    | app | DELETE /api/v1/conversations/c109d643-91ac-41cd-99e0-513bc4c3b8af → 200 (40ms)
+2026-05-14 13:39:58 | INFO    | app | GET /api/v1/skills → 200 (10ms)
+2026-05-14 13:39:58 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
+2026-05-14 13:40:09 | INFO    | app | POST /api/v1/conversations → 200 (33ms)
+2026-05-14 13:40:09 | INFO    | app | GET /api/v1/conversations → 200 (8ms)
+2026-05-14 13:40:09 | INFO    | app | GET /api/v1/conversations/d0ed628b-7787-4f28-a973-2aef0fe7c10c → 200 (9ms)
+2026-05-14 13:40:09 | INFO    | app | GET /api/v1/conversations/d0ed628b-7787-4f28-a973-2aef0fe7c10c/messages?limit=100 → 200 (10ms)
+2026-05-14 13:40:10 | INFO    | app | GET /api/v1/uploads/d0ed628b-7787-4f28-a973-2aef0fe7c10c → 200 (11ms)
+2026-05-14 13:40:25 | INFO    | app | POST /api/v1/uploads → 200 (31ms)
+2026-05-14 13:40:29 | INFO    | agent | [conv=d0ed628b] Starting agent run, model=glm-4-flash, skills=1
+2026-05-14 13:40:29 | INFO    | app | POST /api/v1/conversations/d0ed628b-7787-4f28-a973-2aef0fe7c10c/messages → 200 (12ms)
+2026-05-14 13:40:29 | INFO    | agent | [conv=d0ed628b] Built registry: 6 builtin + 1 skill tools
+2026-05-14 13:40:29 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=2, tools=7
+2026-05-14 13:40:30 | INFO    | agent | [conv=d0ed628b] Tool document-pro completed (ok, 1670 chars)
+2026-05-14 13:40:30 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=4, tools=7
+2026-05-14 13:40:32 | INFO    | agent | [conv=d0ed628b] Tool document-pro completed (ok, 1670 chars)
+2026-05-14 13:40:32 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=6, tools=7
+2026-05-14 13:40:41 | INFO    | agent | [conv=d0ed628b] Agent run complete: 2 tool calls, 221 chars output
+2026-05-14 13:41:03 | INFO    | agent | [conv=d0ed628b] Starting agent run, model=glm-4-flash, skills=1
+2026-05-14 13:41:03 | INFO    | app | POST /api/v1/conversations/d0ed628b-7787-4f28-a973-2aef0fe7c10c/messages → 200 (11ms)
+2026-05-14 13:41:03 | INFO    | agent | [conv=d0ed628b] Built registry: 6 builtin + 1 skill tools
+2026-05-14 13:41:03 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=6, tools=7
+2026-05-14 13:41:05 | INFO    | agent | [conv=d0ed628b] Tool document-pro completed (ok, 1670 chars)
+2026-05-14 13:41:05 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=8, tools=7
+2026-05-14 13:41:08 | INFO    | agent | [conv=d0ed628b] Agent run complete: 1 tool calls, 73 chars output
+2026-05-14 13:41:11 | INFO    | app | DELETE /api/v1/uploads/d0ed628b-7787-4f28-a973-2aef0fe7c10c/简历.docx → 200 (27ms)
+2026-05-14 13:41:13 | INFO    | app | GET /api/v1/conversations → 200 (10ms)
+2026-05-14 13:41:13 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 13:41:14 | INFO    | app | DELETE /api/v1/conversations/d0ed628b-7787-4f28-a973-2aef0fe7c10c → 200 (37ms)
+2026-05-14 13:41:15 | INFO    | app | GET /api/v1/skills → 200 (10ms)
+2026-05-14 13:41:15 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
+2026-05-14 13:41:23 | INFO    | app | POST /api/v1/conversations → 200 (48ms)
+2026-05-14 13:41:24 | INFO    | app | GET /api/v1/conversations → 200 (8ms)
+2026-05-14 13:41:24 | INFO    | app | GET /api/v1/conversations/04ad3338-e878-4588-82c2-c89c8cf82678 → 200 (9ms)
+2026-05-14 13:41:24 | INFO    | app | GET /api/v1/conversations/04ad3338-e878-4588-82c2-c89c8cf82678/messages?limit=100 → 200 (10ms)
+2026-05-14 13:41:24 | INFO    | app | GET /api/v1/uploads/04ad3338-e878-4588-82c2-c89c8cf82678 → 200 (10ms)
+2026-05-14 13:41:29 | INFO    | agent | [conv=04ad3338] Starting agent run, model=glm-4-flash, skills=1
+2026-05-14 13:41:29 | INFO    | app | POST /api/v1/conversations/04ad3338-e878-4588-82c2-c89c8cf82678/messages → 200 (12ms)
+2026-05-14 13:41:29 | INFO    | agent | [conv=04ad3338] Built registry: 6 builtin + 1 skill tools
+2026-05-14 13:41:29 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=2, tools=7
+2026-05-14 13:41:30 | INFO    | agent | [conv=04ad3338] Tool document-pro completed (ok, 1670 chars)
+2026-05-14 13:41:30 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=4, tools=7
+2026-05-14 13:41:36 | INFO    | agent | [conv=04ad3338] Agent run complete: 1 tool calls, 152 chars output
+2026-05-14 13:41:41 | INFO    | app | POST /api/v1/uploads → 200 (30ms)
+2026-05-14 13:41:46 | INFO    | agent | [conv=04ad3338] Starting agent run, model=glm-4-flash, skills=1
+2026-05-14 13:41:46 | INFO    | app | POST /api/v1/conversations/04ad3338-e878-4588-82c2-c89c8cf82678/messages → 200 (10ms)
+2026-05-14 13:41:46 | INFO    | agent | [conv=04ad3338] Built registry: 6 builtin + 1 skill tools
+2026-05-14 13:41:46 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=5, tools=7
+2026-05-14 13:41:47 | INFO    | agent | [conv=04ad3338] Tool document-pro completed (ok, 1670 chars)
+2026-05-14 13:41:47 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=7, tools=7
+2026-05-14 13:41:52 | INFO    | agent | [conv=04ad3338] Agent run complete: 1 tool calls, 179 chars output
+2026-05-14 13:42:02 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-14 13:42:03 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 13:42:07 | INFO    | app | GET /api/v1/conversations/04ad3338-e878-4588-82c2-c89c8cf82678 → 200 (9ms)
+2026-05-14 13:42:08 | INFO    | app | GET /api/v1/conversations/04ad3338-e878-4588-82c2-c89c8cf82678/messages?limit=100 → 200 (11ms)
+2026-05-14 13:42:08 | INFO    | app | GET /api/v1/uploads/04ad3338-e878-4588-82c2-c89c8cf82678 → 200 (18ms)
+2026-05-14 13:42:11 | INFO    | app | GET /api/v1/conversations → 200 (10ms)
+2026-05-14 13:42:11 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 13:42:13 | INFO    | app | DELETE /api/v1/conversations/04ad3338-e878-4588-82c2-c89c8cf82678 → 200 (39ms)
+2026-05-14 13:42:15 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
+2026-05-14 13:42:15 | INFO    | app | GET /api/v1/skills → 200 (9ms)
+2026-05-14 13:42:26 | INFO    | app | POST /api/v1/conversations → 200 (38ms)
+2026-05-14 13:42:26 | INFO    | app | GET /api/v1/conversations → 200 (8ms)
+2026-05-14 13:42:26 | INFO    | app | GET /api/v1/conversations/f313bfa2-112f-4ab9-aeb0-b1df055fe6ed → 200 (8ms)
+2026-05-14 13:42:26 | INFO    | app | GET /api/v1/conversations/f313bfa2-112f-4ab9-aeb0-b1df055fe6ed/messages?limit=100 → 200 (10ms)
+2026-05-14 13:42:26 | INFO    | app | GET /api/v1/uploads/f313bfa2-112f-4ab9-aeb0-b1df055fe6ed → 200 (11ms)
+2026-05-14 13:42:33 | INFO    | app | POST /api/v1/uploads → 200 (21ms)
+2026-05-14 13:42:55 | INFO    | agent | [conv=f313bfa2] Starting agent run, model=glm-4, skills=1
+2026-05-14 13:42:55 | INFO    | app | POST /api/v1/conversations/f313bfa2-112f-4ab9-aeb0-b1df055fe6ed/messages → 200 (10ms)
+2026-05-14 13:42:55 | INFO    | agent | [conv=f313bfa2] Built registry: 6 builtin + 1 skill tools
+2026-05-14 13:42:56 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=2, tools=7
+2026-05-14 13:42:56 | INFO    | agent | [conv=f313bfa2] Tool document-pro completed (ok, 1670 chars)
+2026-05-14 13:42:56 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=4, tools=7
+2026-05-14 13:43:01 | INFO    | agent | [conv=f313bfa2] Tool execute_python completed (ok, 14 chars)
+2026-05-14 13:43:01 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=6, tools=7
+2026-05-14 13:43:02 | INFO    | agent | [conv=f313bfa2] Tool execute_bash completed (ok, 147 chars)
+2026-05-14 13:43:02 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=8, tools=7
+2026-05-14 13:43:09 | INFO    | agent | [conv=f313bfa2] Tool execute_python completed (ok, 127 chars)
+2026-05-14 13:43:09 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=10, tools=7
+2026-05-14 13:43:16 | INFO    | agent | [conv=f313bfa2] Tool execute_python completed (ok, 113 chars)
+2026-05-14 13:43:16 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=12, tools=7
+2026-05-14 13:43:21 | INFO    | agent | [conv=f313bfa2] Tool execute_python completed (ok, 4745 chars)
+2026-05-14 13:43:21 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=14, tools=7
+2026-05-14 13:43:29 | INFO    | agent | [conv=f313bfa2] Agent run complete: 6 tool calls, 981 chars output
+2026-05-14 14:08:09 | INFO    | app | GET /api/v1/conversations → 200 (11ms)
+2026-05-14 14:08:10 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 14:09:06 | INFO    | app | Application shutting down
+2026-05-14 14:09:11 | INFO    | app | Application starting up...
+2026-05-14 14:09:11 | INFO    | app | Database tables initialized
+2026-05-14 14:21:39 | INFO    | app | GET /api/v1/skills → 200 (55ms)
+2026-05-14 14:21:39 | INFO    | app | GET /api/v1/skills/public → 200 (9ms)
+2026-05-14 14:21:53 | INFO    | app | POST /api/v1/skills/public/upload → 200 (220ms)
+2026-05-14 14:21:53 | INFO    | app | GET /api/v1/skills → 200 (9ms)
+2026-05-14 14:21:54 | INFO    | app | GET /api/v1/skills/public → 200 (6ms)
+2026-05-14 14:21:54 | INFO    | app | Application shutting down
+2026-05-14 14:21:58 | INFO    | app | Application starting up...
+2026-05-14 14:21:58 | INFO    | app | Database tables initialized
+2026-05-14 14:22:00 | INFO    | app | GET /api/v1/conversations → 200 (47ms)
+2026-05-14 14:22:01 | INFO    | app | GET /api/v1/models → 200 (6ms)
+2026-05-14 14:22:03 | INFO    | app | DELETE /api/v1/conversations/f313bfa2-112f-4ab9-aeb0-b1df055fe6ed → 200 (39ms)
+2026-05-14 14:22:05 | INFO    | app | GET /api/v1/skills → 200 (19ms)
+2026-05-14 14:22:05 | INFO    | app | GET /api/v1/skills/public → 200 (10ms)
+2026-05-14 14:22:19 | INFO    | app | POST /api/v1/conversations → 200 (36ms)
+2026-05-14 14:22:19 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-14 14:22:19 | INFO    | app | GET /api/v1/conversations/f1d3811a-f113-45c1-83af-ee2db6483b66 → 200 (10ms)
+2026-05-14 14:22:20 | INFO    | app | GET /api/v1/conversations/f1d3811a-f113-45c1-83af-ee2db6483b66/messages?limit=100 → 200 (17ms)
+2026-05-14 14:22:20 | INFO    | app | GET /api/v1/uploads/f1d3811a-f113-45c1-83af-ee2db6483b66 → 200 (16ms)
+2026-05-14 14:22:37 | INFO    | app | POST /api/v1/uploads → 200 (23ms)
+2026-05-14 14:22:53 | INFO    | agent | [conv=f1d3811a] Starting agent run, model=glm-4-flash, skills=2
+2026-05-14 14:22:53 | INFO    | app | POST /api/v1/conversations/f1d3811a-f113-45c1-83af-ee2db6483b66/messages → 200 (12ms)
+2026-05-14 14:22:53 | INFO    | agent | [conv=f1d3811a] Built registry: 6 builtin + 2 skill tools
+2026-05-14 14:22:53 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=2, tools=8
+2026-05-14 14:22:59 | INFO    | agent | [conv=f1d3811a] Tool read_file completed (error, 107 chars)
+2026-05-14 14:22:59 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=4, tools=8
+2026-05-14 14:23:06 | INFO    | agent | [conv=f1d3811a] Tool execute_python completed (error, 167 chars)
+2026-05-14 14:23:06 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=6, tools=8
+2026-05-14 14:23:18 | INFO    | app | GET /api/v1/conversations → 200 (12ms)
+2026-05-14 14:23:18 | INFO    | agent | [conv=f1d3811a] Tool execute_python completed (ok, 11 chars)
+2026-05-14 14:23:18 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=8, tools=8
+2026-05-14 14:23:18 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 14:23:20 | INFO    | app | DELETE /api/v1/conversations/f1d3811a-f113-45c1-83af-ee2db6483b66 → 200 (30ms)
+2026-05-14 14:23:22 | INFO    | agent | [conv=f1d3811a] Agent run complete: 3 tool calls, 71 chars output
+2026-05-14 14:23:22 | INFO    | app | GET /api/v1/skills → 200 (10ms)
+2026-05-14 14:23:23 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
+2026-05-14 14:23:35 | INFO    | app | POST /api/v1/conversations → 200 (33ms)
+2026-05-14 14:23:36 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-14 14:23:36 | INFO    | app | GET /api/v1/conversations/ea1bbcbf-25e0-4a3f-bca4-6dcd8e0dc734 → 200 (9ms)
+2026-05-14 14:23:36 | INFO    | app | GET /api/v1/conversations/ea1bbcbf-25e0-4a3f-bca4-6dcd8e0dc734/messages?limit=100 → 200 (11ms)
+2026-05-14 14:23:36 | INFO    | app | GET /api/v1/uploads/ea1bbcbf-25e0-4a3f-bca4-6dcd8e0dc734 → 200 (10ms)
+2026-05-14 14:24:10 | INFO    | app | GET /api/v1/conversations → 200 (10ms)
+2026-05-14 14:24:11 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 14:24:12 | INFO    | app | DELETE /api/v1/conversations/ea1bbcbf-25e0-4a3f-bca4-6dcd8e0dc734 → 200 (29ms)
+2026-05-14 14:24:13 | INFO    | app | GET /api/v1/skills → 200 (8ms)
+2026-05-14 14:24:13 | INFO    | app | GET /api/v1/skills/public → 200 (6ms)
+2026-05-14 14:24:44 | INFO    | app | POST /api/v1/conversations → 200 (33ms)
+2026-05-14 14:24:44 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-14 14:24:44 | INFO    | app | GET /api/v1/conversations/c34cd0be-a200-4c0f-b5fd-f017b796e022 → 200 (9ms)
+2026-05-14 14:24:44 | INFO    | app | GET /api/v1/conversations/c34cd0be-a200-4c0f-b5fd-f017b796e022/messages?limit=100 → 200 (15ms)
+2026-05-14 14:24:45 | INFO    | app | GET /api/v1/uploads/c34cd0be-a200-4c0f-b5fd-f017b796e022 → 200 (11ms)
+2026-05-14 14:24:56 | INFO    | app | POST /api/v1/uploads → 200 (19ms)
+2026-05-14 14:25:09 | INFO    | agent | [conv=c34cd0be] Starting agent run, model=glm-4, skills=2
+2026-05-14 14:25:09 | INFO    | app | POST /api/v1/conversations/c34cd0be-a200-4c0f-b5fd-f017b796e022/messages → 200 (9ms)
+2026-05-14 14:25:09 | INFO    | agent | [conv=c34cd0be] Built registry: 6 builtin + 2 skill tools
+2026-05-14 14:25:09 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=2, tools=8
+2026-05-14 14:25:10 | INFO    | agent | [conv=c34cd0be] Tool document-pro completed (ok, 2081 chars)
+2026-05-14 14:25:10 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=4, tools=8
+2026-05-14 14:25:34 | INFO    | agent | [conv=c34cd0be] Tool execute_python completed (error, 167 chars)
+2026-05-14 14:25:34 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=6, tools=8
+2026-05-14 14:26:05 | INFO    | agent | [conv=c34cd0be] Tool execute_bash completed (error, 35 chars)
+2026-05-14 14:26:05 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=8, tools=8
+2026-05-14 14:26:06 | INFO    | agent | [conv=c34cd0be] Tool execute_bash completed (ok, 81 chars)
+2026-05-14 14:26:06 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=10, tools=8
+2026-05-14 14:26:10 | INFO    | agent | [conv=c34cd0be] Tool execute_bash completed (error, 233 chars)
+2026-05-14 14:26:10 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=12, tools=8
+2026-05-14 14:27:12 | INFO    | agent | [conv=c34cd0be] Tool execute_bash completed (error, 35 chars)
+2026-05-14 14:27:12 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=14, tools=8
+2026-05-14 14:28:21 | INFO    | app | Application starting up...
+2026-05-14 14:28:21 | INFO    | app | Database tables initialized
+2026-05-14 14:38:41 | INFO    | app | Application shutting down
+2026-05-14 14:40:05 | INFO    | app | Application starting up...
+2026-05-14 14:40:05 | INFO    | app | Database tables initialized
+2026-05-14 14:40:06 | INFO    | app | GET /api/v1/conversations → 200 (42ms)
+2026-05-14 14:40:12 | INFO    | app | GET /api/v1/skills → 200 (19ms)
+2026-05-14 14:40:12 | INFO    | app | GET /api/v1/skills/public → 200 (10ms)
+2026-05-14 14:40:13 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-14 14:40:13 | INFO    | app | GET /api/v1/models → 200 (6ms)
+2026-05-14 14:40:15 | INFO    | app | DELETE /api/v1/conversations/c34cd0be-a200-4c0f-b5fd-f017b796e022 → 200 (47ms)
+2026-05-14 14:40:16 | INFO    | app | GET /api/v1/skills → 200 (9ms)
+2026-05-14 14:40:16 | INFO    | app | GET /api/v1/skills/public → 200 (6ms)
+2026-05-14 14:40:28 | INFO    | app | POST /api/v1/conversations → 200 (45ms)
+2026-05-14 14:40:29 | INFO    | app | GET /api/v1/conversations → 200 (8ms)
+2026-05-14 14:40:29 | INFO    | app | GET /api/v1/conversations/bd81a4f1-037b-4c0f-b786-897a9caf979b → 200 (10ms)
+2026-05-14 14:40:29 | INFO    | app | GET /api/v1/conversations/bd81a4f1-037b-4c0f-b786-897a9caf979b/messages?limit=100 → 200 (17ms)
+2026-05-14 14:40:29 | INFO    | app | GET /api/v1/uploads/bd81a4f1-037b-4c0f-b786-897a9caf979b → 200 (16ms)
+2026-05-14 14:40:40 | INFO    | app | POST /api/v1/uploads → 200 (22ms)
+2026-05-14 14:41:00 | INFO    | agent | [conv=bd81a4f1] Starting agent run, model=glm-4, skills=2
+2026-05-14 14:41:00 | INFO    | app | POST /api/v1/conversations/bd81a4f1-037b-4c0f-b786-897a9caf979b/messages → 200 (13ms)
+2026-05-14 14:41:00 | INFO    | agent | [conv=bd81a4f1] Built registry: 6 builtin + 2 skill tools
+2026-05-14 14:41:00 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=2, tools=8
+2026-05-14 14:41:10 | INFO    | agent | [conv=bd81a4f1] Tool execute_python completed (ok, 595 chars)
+2026-05-14 14:41:10 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=4, tools=8
+2026-05-14 14:41:13 | INFO    | agent | [conv=bd81a4f1] Tool execute_python completed (error, 223 chars)
+2026-05-14 14:41:13 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=6, tools=8
+2026-05-14 14:41:22 | INFO    | agent | [conv=bd81a4f1] Tool execute_python completed (error, 230 chars)
+2026-05-14 14:41:22 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=8, tools=8
+2026-05-14 14:41:33 | INFO    | agent | [conv=bd81a4f1] Tool execute_python completed (ok, 538 chars)
+2026-05-14 14:41:33 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=10, tools=8
+2026-05-14 14:41:44 | INFO    | agent | [conv=bd81a4f1] Tool execute_python completed (ok, 891 chars)
+2026-05-14 14:41:44 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=12, tools=8
+2026-05-14 14:43:20 | INFO    | agent | [conv=bd81a4f1] Agent run complete: 5 tool calls, 1 chars output
+2026-05-14 14:49:53 | INFO    | app | GET /api/v1/conversations → 200 (10ms)
+2026-05-14 14:49:54 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 14:49:55 | INFO    | app | DELETE /api/v1/conversations/bd81a4f1-037b-4c0f-b786-897a9caf979b → 200 (41ms)
+2026-05-14 14:49:56 | INFO    | app | GET /api/v1/skills/public → 200 (6ms)
+2026-05-14 14:49:56 | INFO    | app | GET /api/v1/skills → 200 (9ms)
+2026-05-14 14:50:14 | INFO    | app | POST /api/v1/conversations → 200 (46ms)
+2026-05-14 14:50:14 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-14 14:50:14 | INFO    | app | GET /api/v1/conversations/5bf0e585-7d6e-4132-b7d3-ff49e32ccb35 → 200 (9ms)
+2026-05-14 14:50:15 | INFO    | app | GET /api/v1/conversations/5bf0e585-7d6e-4132-b7d3-ff49e32ccb35/messages?limit=100 → 200 (10ms)
+2026-05-14 14:50:15 | INFO    | app | GET /api/v1/uploads/5bf0e585-7d6e-4132-b7d3-ff49e32ccb35 → 200 (10ms)
+2026-05-14 14:50:32 | INFO    | app | POST /api/v1/uploads → 200 (19ms)
+2026-05-14 14:50:34 | INFO    | agent | [conv=5bf0e585] Starting agent run, model=glm-4, skills=2
+2026-05-14 14:50:34 | INFO    | app | POST /api/v1/conversations/5bf0e585-7d6e-4132-b7d3-ff49e32ccb35/messages → 200 (9ms)
+2026-05-14 14:50:34 | INFO    | agent | [conv=5bf0e585] Built registry: 6 builtin + 2 skill tools
+2026-05-14 14:50:34 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=2, tools=8
+2026-05-14 14:50:48 | INFO    | agent | [conv=5bf0e585] Tool execute_python completed (ok, 1391 chars)
+2026-05-14 14:50:48 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=4, tools=8
+2026-05-14 14:50:59 | INFO    | agent | [conv=5bf0e585] Tool execute_python completed (ok, 399 chars)
+2026-05-14 14:50:59 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=6, tools=8
+2026-05-14 14:51:20 | INFO    | agent | [conv=5bf0e585] Tool execute_python completed (error, 261 chars)
+2026-05-14 14:51:20 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=8, tools=8
+2026-05-14 14:51:34 | INFO    | app | Application starting up...
+2026-05-14 14:51:34 | INFO    | app | Database tables initialized
+2026-05-14 14:51:35 | INFO    | app | GET /api/v1/conversations → 200 (44ms)
+2026-05-14 14:51:35 | INFO    | app | GET /api/v1/models → 200 (7ms)
+2026-05-14 14:51:40 | INFO    | app | GET /api/v1/conversations/5bf0e585-7d6e-4132-b7d3-ff49e32ccb35 → 200 (10ms)
+2026-05-14 14:51:41 | INFO    | app | GET /api/v1/conversations/5bf0e585-7d6e-4132-b7d3-ff49e32ccb35/messages?limit=100 → 200 (18ms)
+2026-05-14 14:51:41 | INFO    | app | GET /api/v1/uploads/5bf0e585-7d6e-4132-b7d3-ff49e32ccb35 → 200 (24ms)
+2026-05-14 14:51:43 | INFO    | app | GET /api/v1/conversations → 200 (10ms)
+2026-05-14 14:51:43 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 14:51:45 | INFO    | app | DELETE /api/v1/conversations/5bf0e585-7d6e-4132-b7d3-ff49e32ccb35 → 200 (41ms)
+2026-05-14 14:51:46 | INFO    | app | GET /api/v1/skills → 200 (17ms)
+2026-05-14 14:51:46 | INFO    | app | GET /api/v1/skills/public → 200 (9ms)
+2026-05-14 14:52:04 | INFO    | app | POST /api/v1/conversations → 200 (34ms)
+2026-05-14 14:52:04 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-14 14:52:05 | INFO    | app | GET /api/v1/conversations/2b0fb943-c325-48ac-aba8-1ff6ca8bef47 → 200 (8ms)
+2026-05-14 14:52:05 | INFO    | app | GET /api/v1/conversations/2b0fb943-c325-48ac-aba8-1ff6ca8bef47/messages?limit=100 → 200 (10ms)
+2026-05-14 14:52:05 | INFO    | app | GET /api/v1/uploads/2b0fb943-c325-48ac-aba8-1ff6ca8bef47 → 200 (10ms)
+2026-05-14 14:52:29 | INFO    | app | POST /api/v1/uploads → 200 (19ms)
+2026-05-14 14:52:31 | INFO    | agent | [conv=2b0fb943] Starting agent run, model=glm-4, skills=2
+2026-05-14 14:52:31 | INFO    | app | POST /api/v1/conversations/2b0fb943-c325-48ac-aba8-1ff6ca8bef47/messages → 200 (10ms)
+2026-05-14 14:52:31 | INFO    | agent | [conv=2b0fb943] Built registry: 6 builtin + 2 skill tools
+2026-05-14 14:52:31 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=2, tools=8
+2026-05-14 14:52:42 | INFO    | agent | [conv=2b0fb943] Tool execute_python completed (ok, 1007 chars)
+2026-05-14 14:52:42 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=4, tools=8
+2026-05-14 14:53:30 | INFO    | agent | [conv=2b0fb943] Tool execute_python completed (error, 37 chars)
+2026-05-14 14:53:30 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=6, tools=8
+2026-05-14 14:53:51 | INFO    | agent | [conv=2b0fb943] Tool execute_python completed (error, 16907 chars)
+2026-05-14 14:53:51 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=8, tools=8
+2026-05-14 14:54:24 | INFO    | app | Application starting up...
+2026-05-14 14:54:24 | INFO    | app | Database tables initialized
+2026-05-14 14:54:27 | INFO    | app | GET /api/v1/skills/public → 200 (10ms)
+2026-05-14 14:54:27 | INFO    | app | GET /api/v1/skills → 200 (48ms)
+2026-05-14 14:54:37 | INFO    | app | GET /api/v1/conversations → 200 (18ms)
+2026-05-14 14:54:37 | INFO    | app | GET /api/v1/models → 200 (7ms)
+2026-05-14 14:54:39 | INFO    | app | DELETE /api/v1/conversations/2b0fb943-c325-48ac-aba8-1ff6ca8bef47 → 200 (35ms)
+2026-05-14 14:54:40 | INFO    | app | GET /api/v1/skills → 200 (11ms)
+2026-05-14 14:54:40 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
+2026-05-14 14:54:53 | INFO    | app | POST /api/v1/conversations → 200 (45ms)
+2026-05-14 14:54:53 | INFO    | app | GET /api/v1/conversations → 200 (10ms)
+2026-05-14 14:54:53 | INFO    | app | GET /api/v1/conversations/16dff378-872d-4cb6-a7d4-931c1b28665b → 200 (11ms)
+2026-05-14 14:54:53 | INFO    | app | GET /api/v1/conversations/16dff378-872d-4cb6-a7d4-931c1b28665b/messages?limit=100 → 200 (16ms)
+2026-05-14 14:54:53 | INFO    | app | GET /api/v1/uploads/16dff378-872d-4cb6-a7d4-931c1b28665b → 200 (16ms)
+2026-05-14 14:55:33 | INFO    | app | POST /api/v1/uploads → 200 (22ms)
+2026-05-14 14:55:41 | INFO    | agent | [conv=16dff378] Starting agent run, model=glm-4, skills=2
+2026-05-14 14:55:41 | INFO    | app | POST /api/v1/conversations/16dff378-872d-4cb6-a7d4-931c1b28665b/messages → 200 (13ms)
+2026-05-14 14:55:41 | INFO    | agent | [conv=16dff378] Built registry: 6 builtin + 2 skill tools
+2026-05-14 14:55:41 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=2, tools=8
+2026-05-14 14:55:52 | INFO    | agent | [conv=16dff378] Tool execute_python completed (ok, 902 chars)
+2026-05-14 14:55:52 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=4, tools=8
+2026-05-14 14:56:28 | INFO    | agent | [conv=16dff378] Tool execute_python completed (ok, 9940 chars)
+2026-05-14 14:56:28 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=6, tools=8
+2026-05-14 14:56:30 | INFO    | agent | [conv=16dff378] Tool execute_bash completed (ok, 138 chars)
+2026-05-14 14:56:30 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=8, tools=8
+2026-05-14 14:56:35 | INFO    | agent | [conv=16dff378] Agent run complete: 3 tool calls, 485 chars output
+2026-05-14 14:59:25 | INFO    | agent | [conv=16dff378] Starting agent run, model=glm-4, skills=2
+2026-05-14 14:59:25 | INFO    | app | POST /api/v1/conversations/16dff378-872d-4cb6-a7d4-931c1b28665b/messages → 200 (11ms)
+2026-05-14 14:59:25 | INFO    | agent | [conv=16dff378] Built registry: 6 builtin + 2 skill tools
+2026-05-14 14:59:25 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=7, tools=8
+2026-05-14 14:59:27 | INFO    | agent | [conv=16dff378] Agent run complete: 0 tool calls, 158 chars output
+2026-05-14 15:02:52 | INFO    | app | Application shutting down
+2026-05-14 15:02:57 | INFO    | app | Application starting up...
+2026-05-14 15:02:57 | INFO    | app | Database tables initialized
+2026-05-14 15:04:10 | INFO    | app | Application shutting down
+2026-05-14 15:04:15 | INFO    | app | Application starting up...
+2026-05-14 15:04:15 | INFO    | app | Database tables initialized
+2026-05-14 15:05:28 | INFO    | app | Application shutting down
+2026-05-14 15:05:33 | INFO    | app | Application starting up...
+2026-05-14 15:05:33 | INFO    | app | Database tables initialized
+2026-05-14 15:05:54 | INFO    | app | Application shutting down
+2026-05-14 15:05:59 | INFO    | app | Application starting up...
+2026-05-14 15:05:59 | INFO    | app | Database tables initialized
+2026-05-14 15:16:41 | INFO    | app | Application shutting down
+2026-05-14 15:16:45 | INFO    | app | Application starting up...
+2026-05-14 15:16:45 | INFO    | app | Database tables initialized
+2026-05-14 15:17:34 | INFO    | app | GET /api/v1/conversations → 200 (46ms)
+2026-05-14 15:17:34 | INFO    | app | GET /api/v1/models → 200 (7ms)
+2026-05-14 15:17:37 | INFO    | app | DELETE /api/v1/conversations/16dff378-872d-4cb6-a7d4-931c1b28665b → 200 (49ms)
+2026-05-14 15:17:38 | INFO    | app | GET /api/v1/skills → 200 (19ms)
+2026-05-14 15:17:38 | INFO    | app | GET /api/v1/skills/public → 200 (10ms)
+2026-05-14 15:17:50 | INFO    | app | POST /api/v1/conversations → 200 (38ms)
+2026-05-14 15:17:51 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-14 15:17:51 | INFO    | app | GET /api/v1/conversations/9fea71e7-868a-4366-8a17-f0c0d28c7e5e → 200 (10ms)
+2026-05-14 15:17:51 | INFO    | app | GET /api/v1/conversations/9fea71e7-868a-4366-8a17-f0c0d28c7e5e/messages?limit=100 → 200 (17ms)
+2026-05-14 15:17:51 | INFO    | app | GET /api/v1/uploads/9fea71e7-868a-4366-8a17-f0c0d28c7e5e → 200 (16ms)
+2026-05-14 15:17:56 | INFO    | app | POST /api/v1/uploads → 200 (23ms)
+2026-05-14 15:18:08 | INFO    | agent | [conv=9fea71e7] Starting agent run, model=glm-4, skills=2
+2026-05-14 15:18:08 | INFO    | app | POST /api/v1/conversations/9fea71e7-868a-4366-8a17-f0c0d28c7e5e/messages → 200 (12ms)
+2026-05-14 15:18:08 | INFO    | agent | [conv=9fea71e7] Loaded 2 skills for Skill tool
+2026-05-14 15:18:08 | INFO    | agent | [conv=9fea71e7] Built registry: 6 builtin + Skill tool
+2026-05-14 15:18:08 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=2, tools=7
+2026-05-14 15:18:10 | INFO    | agent | [conv=9fea71e7] Tool Skill completed (error, 77 chars)
+2026-05-14 15:18:10 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=4, tools=7
+2026-05-14 15:18:11 | INFO    | agent | [conv=9fea71e7] Tool Skill completed (ok, 2112 chars)
+2026-05-14 15:18:11 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=6, tools=7
+2026-05-14 15:18:22 | INFO    | agent | [conv=9fea71e7] Tool execute_python completed (ok, 8908 chars)
+2026-05-14 15:18:22 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=8, tools=7
+2026-05-14 15:19:06 | INFO    | agent | [conv=9fea71e7] Tool execute_python completed (error, 1506 chars)
+2026-05-14 15:19:06 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=10, tools=7
+2026-05-14 15:20:05 | INFO    | agent | [conv=9fea71e7] Tool execute_python completed (ok, 13147 chars)
+2026-05-14 15:20:05 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=12, tools=7
+2026-05-14 15:20:08 | INFO    | agent | [conv=9fea71e7] Tool execute_bash completed (ok, 203 chars)
+2026-05-14 15:20:08 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=14, tools=7
+2026-05-14 15:20:10 | INFO    | agent | [conv=9fea71e7] Tool read_file completed (ok, 185 chars)
+2026-05-14 15:20:10 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=16, tools=7
+2026-05-14 15:20:28 | INFO    | agent | [conv=9fea71e7] Agent run complete: 7 tool calls, 721 chars output
+2026-05-14 15:25:59 | INFO    | agent | [conv=9fea71e7] Starting agent run, model=glm-4, skills=2
+2026-05-14 15:25:59 | INFO    | app | POST /api/v1/conversations/9fea71e7-868a-4366-8a17-f0c0d28c7e5e/messages → 200 (28ms)
+2026-05-14 15:25:59 | INFO    | agent | [conv=9fea71e7] Loaded 2 skills for Skill tool
+2026-05-14 15:25:59 | INFO    | agent | [conv=9fea71e7] Built registry: 6 builtin + Skill tool
+2026-05-14 15:25:59 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=11, tools=7
+2026-05-14 15:27:56 | ERROR   | agent | [conv=9fea71e7] Tool write_file execution failed
 Traceback (most recent call last):
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
-    with recv_stream, send_stream, collapse_excgroups():
-                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/app/services/agent_service.py", line 280, in run_agent
+    result = await tool.execute(tool_input, tool_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/app/tools/write_file.py", line 44, in execute
+    file_path = input["file_path"]
+                ~~~~~^^^^^^^^^^^^^
+KeyError: 'file_path'
+2026-05-14 15:27:56 | INFO    | agent | [conv=9fea71e7] Tool write_file completed (error, 33 chars)
+2026-05-14 15:27:56 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=13, tools=7
+2026-05-14 15:30:43 | ERROR   | agent | [conv=9fea71e7] Unexpected error in agent loop
+Traceback (most recent call last):
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 72, in map_httpcore_exceptions
+    yield
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 257, in __aiter__
+    async for part in self._httpcore_stream:
+        yield part
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 407, in __aiter__
+    raise exc from None
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_async/connection_pool.py", line 403, in __aiter__
+    async for part in self._stream:
+        yield part
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_async/http11.py", line 342, in __aiter__
+    raise exc
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_async/http11.py", line 334, in __aiter__
+    async for chunk in self._connection._receive_response_body(**kwargs):
+        yield chunk
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_async/http11.py", line 203, in _receive_response_body
+    event = await self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_async/http11.py", line 217, in _receive_event
+    data = await self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.READ_NUM_BYTES, timeout=timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_backends/anyio.py", line 32, in read
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
   File "/home/zero/miniconda3/lib/python3.13/contextlib.py", line 162, in __exit__
     self.gen.throw(value)
     ~~~~~~~~~~~~~~^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 87, in collapse_excgroups
-    raise exc
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
-    response = await self.dispatch_func(request, call_next)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/app/main.py", line 46, in log_requests
-    response = await call_next(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
-    raise app_exc from app_exc.__cause__ or app_exc.__context__
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
-    await self.app(scope, receive_or_disconnect, send_no_error)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 96, in __call__
-    await self.simple_response(scope, receive, send, request_headers=headers)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 154, in simple_response
-    await self.app(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 660, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 680, in app
-    await route.handle(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 276, in handle
-    await self.app(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 134, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 120, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 674, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/app/routers/skills.py", line 64, in upload_skill
-    skill = await skill_service.create_skill_from_zip(
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<5 lines>...
-    )
-    ^
-  File "/mnt/c/Users/27267/Projects/agent-skills/app/services/skill_service.py", line 71, in create_skill_from_zip
-    with zipfile.ZipFile(zip_bytes) as zf:
-         ~~~~~~~~~~~~~~~^^^^^^^^^^^
-  File "/home/zero/miniconda3/lib/python3.13/zipfile/__init__.py", line 1401, in __init__
-    self._RealGetContents()
-    ~~~~~~~~~~~~~~~~~~~~~^^
-  File "/home/zero/miniconda3/lib/python3.13/zipfile/__init__.py", line 1464, in _RealGetContents
-    endrec = _EndRecData(fp)
-  File "/home/zero/miniconda3/lib/python3.13/zipfile/__init__.py", line 319, in _EndRecData
-    fpin.seek(0, 2)
-    ^^^^^^^^^
-AttributeError: 'bytes' object has no attribute 'seek'
-2026-05-09 17:07:46 | INFO    | app | Application shutting down
-2026-05-09 17:07:53 | INFO    | app | Application starting up...
-2026-05-09 17:07:53 | INFO    | app | Database tables initialized
-2026-05-09 17:08:00 | INFO    | app | Application shutting down
-2026-05-09 17:08:05 | INFO    | app | Application starting up...
-2026-05-09 17:08:05 | INFO    | app | Database tables initialized
-2026-05-09 17:08:46 | INFO    | app | POST /api/v1/skills/upload → 400 (1699ms)
-2026-05-09 17:08:50 | INFO    | app | Application shutting down
-2026-05-09 17:08:55 | INFO    | app | Application starting up...
-2026-05-09 17:08:55 | INFO    | app | Database tables initialized
-2026-05-09 17:10:54 | INFO    | app | POST /api/v1/skills/upload → 400 (1655ms)
-2026-05-09 17:10:55 | INFO    | app | Application shutting down
-2026-05-09 17:11:00 | INFO    | app | Application starting up...
-2026-05-09 17:11:00 | INFO    | app | Database tables initialized
-2026-05-09 17:11:57 | INFO    | app | POST /api/v1/skills/upload → 400 (1653ms)
-2026-05-09 17:11:58 | INFO    | app | Application shutting down
-2026-05-09 17:12:02 | INFO    | app | Application starting up...
-2026-05-09 17:12:02 | INFO    | app | Database tables initialized
-2026-05-09 17:12:38 | INFO    | app | POST /api/v1/skills/upload → 400 (1670ms)
-2026-05-09 17:12:46 | INFO    | app | Application shutting down
-2026-05-09 17:12:51 | INFO    | app | Application starting up...
-2026-05-09 17:12:51 | INFO    | app | Database tables initialized
-2026-05-09 17:14:25 | INFO    | app | Application shutting down
-2026-05-09 17:14:30 | INFO    | app | Application starting up...
-2026-05-09 17:14:30 | INFO    | app | Database tables initialized
-2026-05-09 17:14:50 | INFO    | app | Application shutting down
-2026-05-09 17:14:55 | INFO    | app | Application starting up...
-2026-05-09 17:14:55 | INFO    | app | Database tables initialized
-2026-05-09 17:15:03 | ERROR   | app | Unhandled error on /api/v1/skills/upload
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ReadTimeout
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 191, in __call__
-    with recv_stream, send_stream, collapse_excgroups():
-                                   ~~~~~~~~~~~~~~~~~~^^
+  File "/mnt/c/Users/27267/Projects/agent-skills/app/services/agent_service.py", line 253, in run_agent
+    async for event in chat_stream(model_id, messages, tool_defs):
+    ...<60 lines>...
+                yield f"event: error\ndata: {json.dumps({'type': 'error', 'code': 'TOOL_NOT_FOUND', 'message': f'Tool not found: {tool_name}'})}\n\n"
+  File "/mnt/c/Users/27267/Projects/agent-skills/app/services/llm_service.py", line 71, in chat_stream
+    async for line in response.aiter_lines():
+    ...<37 lines>...
+                buf["arguments"] += tc["function"]["arguments"]
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_models.py", line 965, in aiter_lines
+    async for text in self.aiter_text():
+        for line in decoder.decode(text):
+            yield line
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_models.py", line 952, in aiter_text
+    async for byte_content in self.aiter_bytes():
+    ...<2 lines>...
+            yield chunk
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_models.py", line 931, in aiter_bytes
+    async for raw_bytes in self.aiter_raw():
+    ...<2 lines>...
+            yield chunk
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_models.py", line 989, in aiter_raw
+    async for raw_stream_bytes in self.stream:
+    ...<2 lines>...
+            yield chunk
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_client.py", line 150, in __aiter__
+    async for chunk in self._stream:
+        yield chunk
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 256, in __aiter__
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
   File "/home/zero/miniconda3/lib/python3.13/contextlib.py", line 162, in __exit__
     self.gen.throw(value)
     ~~~~~~~~~~~~~~^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_utils.py", line 87, in collapse_excgroups
-    raise exc
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 193, in __call__
-    response = await self.dispatch_func(request, call_next)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/app/main.py", line 46, in log_requests
-    response = await call_next(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 168, in call_next
-    raise app_exc from app_exc.__cause__ or app_exc.__context__
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/base.py", line 144, in coro
-    await self.app(scope, receive_or_disconnect, send_no_error)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 96, in __call__
-    await self.simple_response(scope, receive, send, request_headers=headers)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 154, in simple_response
-    await self.app(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 660, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 680, in app
-    await route.handle(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/routing.py", line 276, in handle
-    await self.app(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 134, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 120, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 674, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<3 lines>...
-    )
-    ^
-  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 328, in run_endpoint_function
-    return await dependant.call(**values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/mnt/c/Users/27267/Projects/agent-skills/app/routers/skills.py", line 64, in upload_skill
-    skill = await skill_service.create_skill_from_zip(
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<5 lines>...
-    )
-    ^
-  File "/mnt/c/Users/27267/Projects/agent-skills/app/services/skill_service.py", line 92, in create_skill_from_zip
-    for entry in entries:
-                 ^^^^^^^
-NameError: name 'entries' is not defined
-2026-05-09 17:16:51 | INFO    | app | Application shutting down
-2026-05-09 17:16:58 | INFO    | app | Application starting up...
-2026-05-09 17:16:58 | INFO    | app | Database tables initialized
-2026-05-09 17:17:23 | INFO    | app | POST /api/v1/skills/upload → 200 (1453ms)
-2026-05-09 17:17:23 | INFO    | app | GET /api/v1/skills → 200 (10ms)
-2026-05-09 17:17:25 | INFO    | app | Application shutting down
-2026-05-09 17:17:31 | INFO    | app | Application starting up...
-2026-05-09 17:17:31 | INFO    | app | Database tables initialized
-2026-05-09 17:17:37 | INFO    | app | GET /api/v1/conversations → 200 (47ms)
-2026-05-09 17:17:39 | INFO    | app | GET /api/v1/skills/public → 200 (8ms)
-2026-05-09 17:17:39 | INFO    | app | GET /api/v1/skills → 200 (20ms)
-2026-05-09 17:23:24 | INFO    | app | Application shutting down
-2026-05-09 17:23:28 | INFO    | app | Application starting up...
-2026-05-09 17:23:28 | INFO    | app | Database tables initialized
-2026-05-09 17:24:49 | WARNING | app | Auth error on /api/v1/conversations: 无效的令牌
-2026-05-09 17:24:49 | INFO    | app | GET /api/v1/conversations → 401 (35ms)
-2026-05-09 17:24:56 | WARNING | app | Auth error on /api/v1/auth/login: 用户名或密码错误
-2026-05-09 17:24:56 | INFO    | app | POST /api/v1/auth/login → 401 (178ms)
-2026-05-09 17:25:02 | INFO    | app | POST /api/v1/auth/login → 200 (166ms)
-2026-05-09 17:25:02 | INFO    | app | GET /api/v1/skills → 200 (19ms)
-2026-05-09 17:25:02 | INFO    | app | GET /api/v1/skills/public → 200 (8ms)
-2026-05-09 17:25:07 | INFO    | app | GET /api/v1/conversations → 200 (11ms)
-2026-05-09 17:25:09 | INFO    | app | GET /api/v1/skills → 200 (10ms)
-2026-05-09 17:25:09 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
-2026-05-09 17:25:35 | INFO    | app | POST /api/v1/conversations → 200 (44ms)
-2026-05-09 17:25:36 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
-2026-05-09 17:25:36 | INFO    | app | GET /api/v1/conversations/609476c5-cf6d-43a3-9b33-9b481ded6939 → 200 (12ms)
-2026-05-09 17:25:36 | INFO    | app | GET /api/v1/conversations/609476c5-cf6d-43a3-9b33-9b481ded6939/messages?limit=100 → 200 (20ms)
-2026-05-09 17:25:38 | INFO    | app | GET /api/v1/conversations → 200 (10ms)
-2026-05-09 17:25:40 | INFO    | app | DELETE /api/v1/conversations/609476c5-cf6d-43a3-9b33-9b481ded6939 → 200 (38ms)
-2026-05-09 17:25:42 | INFO    | app | GET /api/v1/skills/public → 200 (6ms)
-2026-05-09 17:25:42 | INFO    | app | GET /api/v1/skills → 200 (10ms)
-2026-05-09 17:27:47 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
-2026-05-09 17:27:47 | INFO    | app | GET /api/v1/models → 200 (7ms)
-2026-05-09 17:27:50 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
-2026-05-09 17:27:50 | INFO    | app | GET /api/v1/models → 200 (0ms)
-2026-05-09 17:27:52 | INFO    | app | GET /api/v1/skills → 200 (10ms)
-2026-05-09 17:27:52 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
-2026-05-09 17:28:06 | INFO    | app | POST /api/v1/conversations → 200 (39ms)
-2026-05-09 17:28:06 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
-2026-05-09 17:28:06 | INFO    | app | GET /api/v1/conversations/059f77ae-2cb6-45ae-81cd-a4a43e50890c → 200 (10ms)
-2026-05-09 17:28:06 | INFO    | app | GET /api/v1/conversations/059f77ae-2cb6-45ae-81cd-a4a43e50890c/messages?limit=100 → 200 (12ms)
-2026-05-09 17:28:20 | INFO    | agent | [conv=059f77ae] Starting agent run, model=glm-4-flash, skills=1
-2026-05-09 17:28:20 | INFO    | app | POST /api/v1/conversations/059f77ae-2cb6-45ae-81cd-a4a43e50890c/messages → 200 (12ms)
-2026-05-09 17:28:20 | INFO    | agent | [conv=059f77ae] Built registry: 6 builtin + 1 skill tools
-2026-05-09 17:28:20 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=2, tools=7
-2026-05-09 17:28:22 | INFO    | agent | [conv=059f77ae] Tool docx completed (ok, 20056 chars)
-2026-05-09 17:28:22 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=4, tools=7
-2026-05-09 17:28:24 | INFO    | agent | [conv=059f77ae] Agent run complete: 1 tool calls, 47 chars output
-2026-05-09 17:33:09 | INFO    | app | Application shutting down
-2026-05-09 17:33:13 | INFO    | app | Application starting up...
-2026-05-09 17:33:13 | INFO    | app | Database tables initialized
-2026-05-09 17:33:31 | INFO    | app | Application shutting down
-2026-05-09 17:33:36 | INFO    | app | Application starting up...
-2026-05-09 17:33:36 | INFO    | app | Database tables initialized
-2026-05-09 17:34:44 | INFO    | app | Application shutting down
-2026-05-09 17:34:49 | INFO    | app | Application starting up...
-2026-05-09 17:34:49 | INFO    | app | Database tables initialized
-2026-05-09 17:34:52 | INFO    | app | Application shutting down
-2026-05-09 17:34:57 | INFO    | app | Application starting up...
-2026-05-09 17:34:57 | INFO    | app | Database tables initialized
-2026-05-09 17:35:01 | INFO    | app | Application starting up...
-2026-05-09 17:35:01 | INFO    | app | Database tables initialized
-2026-05-09 17:35:01 | INFO    | app | GET /api/v1/conversations → 200 (46ms)
-2026-05-09 17:35:01 | INFO    | app | GET /api/v1/models → 200 (8ms)
-2026-05-09 17:35:09 | INFO    | app | DELETE /api/v1/conversations/059f77ae-2cb6-45ae-81cd-a4a43e50890c → 200 (43ms)
-2026-05-09 17:35:10 | INFO    | app | GET /api/v1/skills → 200 (16ms)
-2026-05-09 17:35:11 | INFO    | app | GET /api/v1/skills/public → 200 (10ms)
-2026-05-09 17:35:19 | INFO    | app | POST /api/v1/conversations → 200 (44ms)
-2026-05-09 17:35:19 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
-2026-05-09 17:35:19 | INFO    | app | GET /api/v1/conversations/1fd84261-0888-43d2-a6fc-b47da1fa432c → 200 (12ms)
-2026-05-09 17:35:20 | INFO    | app | GET /api/v1/conversations/1fd84261-0888-43d2-a6fc-b47da1fa432c/messages?limit=100 → 200 (17ms)
-2026-05-09 17:35:41 | INFO    | agent | [conv=1fd84261] Starting agent run, model=glm-4-flash, skills=1
-2026-05-09 17:35:41 | INFO    | app | POST /api/v1/conversations/1fd84261-0888-43d2-a6fc-b47da1fa432c/messages → 200 (12ms)
-2026-05-09 17:35:41 | INFO    | agent | [conv=1fd84261] Built registry: 6 builtin + 1 skill tools
-2026-05-09 17:35:41 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=2, tools=7
-2026-05-09 17:35:42 | INFO    | agent | [conv=1fd84261] Tool docx completed (ok, 20056 chars)
-2026-05-09 17:35:42 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=4, tools=7
-2026-05-09 17:35:50 | INFO    | agent | [conv=1fd84261] Tool write_file completed (ok, 47 chars)
-2026-05-09 17:35:50 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=6, tools=7
-2026-05-09 17:35:53 | INFO    | agent | [conv=1fd84261] Agent run complete: 2 tool calls, 49 chars output
-2026-05-09 17:42:11 | INFO    | app | GET /api/v1/conversations → 200 (17ms)
-2026-05-09 17:42:11 | INFO    | app | GET /api/v1/models → 200 (0ms)
-2026-05-09 17:42:12 | INFO    | app | DELETE /api/v1/conversations/1fd84261-0888-43d2-a6fc-b47da1fa432c → 200 (30ms)
-2026-05-09 17:42:14 | INFO    | app | GET /api/v1/skills → 200 (9ms)
-2026-05-09 17:42:14 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
-2026-05-09 17:42:22 | INFO    | app | POST /api/v1/conversations → 200 (33ms)
-2026-05-09 17:42:23 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
-2026-05-09 17:42:23 | INFO    | app | GET /api/v1/conversations/fc4895f9-de10-41c9-8931-8a10c90f0b36 → 200 (10ms)
-2026-05-09 17:42:23 | INFO    | app | GET /api/v1/conversations/fc4895f9-de10-41c9-8931-8a10c90f0b36/messages?limit=100 → 200 (12ms)
-2026-05-09 17:42:33 | INFO    | agent | [conv=fc4895f9] Starting agent run, model=glm-4-flash, skills=1
-2026-05-09 17:42:33 | INFO    | app | POST /api/v1/conversations/fc4895f9-de10-41c9-8931-8a10c90f0b36/messages → 200 (13ms)
-2026-05-09 17:42:33 | INFO    | agent | [conv=fc4895f9] Built registry: 6 builtin + 1 skill tools
-2026-05-09 17:42:33 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=2, tools=7
-2026-05-09 17:42:34 | INFO    | agent | [conv=fc4895f9] Tool docx completed (ok, 2326 chars)
-2026-05-09 17:42:34 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=4, tools=7
-2026-05-09 17:42:38 | INFO    | agent | [conv=fc4895f9] Agent run complete: 1 tool calls, 54 chars output
-2026-05-09 17:43:10 | INFO    | app | GET /api/v1/conversations → 200 (13ms)
-2026-05-09 17:43:10 | INFO    | app | GET /api/v1/models → 200 (0ms)
-2026-05-09 17:43:11 | INFO    | app | DELETE /api/v1/conversations/fc4895f9-de10-41c9-8931-8a10c90f0b36 → 200 (32ms)
-2026-05-09 17:43:12 | INFO    | app | GET /api/v1/skills → 200 (9ms)
-2026-05-09 17:43:12 | INFO    | app | GET /api/v1/skills/public → 200 (8ms)
-2026-05-09 17:43:17 | INFO    | app | POST /api/v1/conversations → 200 (41ms)
-2026-05-09 17:43:18 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
-2026-05-09 17:43:18 | INFO    | app | GET /api/v1/conversations/3af732e2-6918-4961-9555-84b1323013f9 → 200 (9ms)
-2026-05-09 17:43:18 | INFO    | app | GET /api/v1/conversations/3af732e2-6918-4961-9555-84b1323013f9/messages?limit=100 → 200 (11ms)
-2026-05-09 17:43:25 | INFO    | agent | [conv=3af732e2] Starting agent run, model=glm-4-flash, skills=1
-2026-05-09 17:43:25 | INFO    | app | POST /api/v1/conversations/3af732e2-6918-4961-9555-84b1323013f9/messages → 200 (10ms)
-2026-05-09 17:43:25 | INFO    | agent | [conv=3af732e2] Built registry: 6 builtin + 1 skill tools
-2026-05-09 17:43:25 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=2, tools=7
-2026-05-09 17:43:26 | INFO    | agent | [conv=3af732e2] Tool docx completed (ok, 2326 chars)
-2026-05-09 17:43:26 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=4, tools=7
-2026-05-09 17:43:29 | INFO    | agent | [conv=3af732e2] Agent run complete: 1 tool calls, 82 chars output
-2026-05-09 17:44:00 | INFO    | agent | [conv=3af732e2] Starting agent run, model=glm-4-flash, skills=1
-2026-05-09 17:44:00 | INFO    | app | POST /api/v1/conversations/3af732e2-6918-4961-9555-84b1323013f9/messages → 200 (10ms)
-2026-05-09 17:44:00 | INFO    | agent | [conv=3af732e2] Built registry: 6 builtin + 1 skill tools
-2026-05-09 17:44:00 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=5, tools=7
-2026-05-09 17:44:02 | INFO    | agent | [conv=3af732e2] Tool execute_bash completed (ok, 11 chars)
-2026-05-09 17:44:02 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=7, tools=7
-2026-05-09 17:44:05 | INFO    | agent | [conv=3af732e2] Tool write_file completed (ok, 37 chars)
-2026-05-09 17:44:05 | INFO    | llm | LLM stream → https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4-flash, messages=9, tools=7
-2026-05-09 17:44:10 | INFO    | agent | [conv=3af732e2] Agent run complete: 2 tool calls, 117 chars output
+  File "/mnt/c/Users/27267/Projects/agent-skills/.venv/lib/python3.13/site-packages/httpx/_transports/default.py", line 89, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ReadTimeout
+2026-05-14 15:39:16 | INFO    | app | Application shutting down
+2026-05-14 15:39:20 | INFO    | app | Application starting up...
+2026-05-14 15:39:20 | INFO    | app | Database tables initialized
+2026-05-14 15:39:42 | INFO    | app | Application shutting down
+2026-05-14 15:39:47 | INFO    | app | Application starting up...
+2026-05-14 15:39:47 | INFO    | app | Database tables initialized
+2026-05-14 15:40:08 | INFO    | app | Application shutting down
+2026-05-14 15:40:13 | INFO    | app | Application starting up...
+2026-05-14 15:40:13 | INFO    | app | Database tables initialized
+2026-05-14 15:40:34 | INFO    | app | Application shutting down
+2026-05-14 15:40:39 | INFO    | app | Application starting up...
+2026-05-14 15:40:39 | INFO    | app | Database tables initialized
+2026-05-14 15:41:00 | INFO    | app | Application shutting down
+2026-05-14 15:41:04 | INFO    | app | Application starting up...
+2026-05-14 15:41:04 | INFO    | app | Database tables initialized
+2026-05-14 15:41:14 | WARNING | app | Auth error on /api/v1/conversations: 无效的令牌
+2026-05-14 15:41:14 | INFO    | app | GET /api/v1/conversations → 401 (33ms)
+2026-05-14 15:41:14 | INFO    | app | GET /api/v1/models → 200 (7ms)
+2026-05-14 15:41:17 | INFO    | app | POST /api/v1/auth/login → 200 (185ms)
+2026-05-14 15:41:17 | INFO    | app | GET /api/v1/skills/public → 200 (12ms)
+2026-05-14 15:41:17 | INFO    | app | GET /api/v1/skills → 200 (24ms)
+2026-05-14 15:41:21 | INFO    | app | DELETE /api/v1/skills/4fbdf118-0328-4869-97bb-767c435460ee → 200 (43ms)
+2026-05-14 15:41:38 | INFO    | app | POST /api/v1/skills/upload → 200 (63ms)
+2026-05-14 15:41:38 | INFO    | app | GET /api/v1/skills → 200 (8ms)
+2026-05-14 15:46:44 | INFO    | app | DELETE /api/v1/skills/ceec62ba-cc20-4347-8197-bf541f4c1a99 → 200 (39ms)
+2026-05-14 15:47:02 | INFO    | app | POST /api/v1/skills/upload → 200 (67ms)
+2026-05-14 15:47:02 | INFO    | app | GET /api/v1/skills → 200 (8ms)
+2026-05-14 15:48:44 | INFO    | app | GET /api/v1/skills → 200 (10ms)
+2026-05-14 15:48:44 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
+2026-05-14 15:48:53 | INFO    | app | GET /api/v1/conversations → 200 (12ms)
+2026-05-14 15:48:53 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 15:48:55 | INFO    | app | DELETE /api/v1/conversations/9fea71e7-868a-4366-8a17-f0c0d28c7e5e → 200 (46ms)
+2026-05-14 15:48:57 | INFO    | app | GET /api/v1/skills → 200 (10ms)
+2026-05-14 15:48:57 | INFO    | app | GET /api/v1/skills/public → 200 (6ms)
+2026-05-14 15:49:07 | INFO    | app | POST /api/v1/conversations → 200 (32ms)
+2026-05-14 15:49:07 | INFO    | app | GET /api/v1/conversations → 200 (8ms)
+2026-05-14 15:49:08 | INFO    | app | GET /api/v1/conversations/cc78abd9-c8ed-4f37-b153-f6fd8469e017 → 200 (11ms)
+2026-05-14 15:49:08 | INFO    | app | GET /api/v1/conversations/cc78abd9-c8ed-4f37-b153-f6fd8469e017/messages?limit=100 → 200 (19ms)
+2026-05-14 15:49:08 | INFO    | app | GET /api/v1/uploads/cc78abd9-c8ed-4f37-b153-f6fd8469e017 → 200 (17ms)
+2026-05-14 15:49:49 | INFO    | app | POST /api/v1/uploads → 200 (23ms)
+2026-05-14 15:49:59 | INFO    | agent | [conv=cc78abd9] Starting agent run, model=glm-4, skills=2
+2026-05-14 15:49:59 | INFO    | app | POST /api/v1/conversations/cc78abd9-c8ed-4f37-b153-f6fd8469e017/messages → 200 (12ms)
+2026-05-14 15:49:59 | INFO    | agent | [conv=cc78abd9] Loaded 2 skills for Skill tool
+2026-05-14 15:49:59 | INFO    | agent | [conv=cc78abd9] Built registry: 6 builtin + Skill tool
+2026-05-14 15:49:59 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=2, tools=7
+2026-05-14 15:50:00 | INFO    | agent | [conv=cc78abd9] Tool Skill completed (error, 77 chars)
+2026-05-14 15:50:00 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=4, tools=7
+2026-05-14 15:50:01 | INFO    | agent | [conv=cc78abd9] Tool read_file completed (error, 107 chars)
+2026-05-14 15:50:01 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=6, tools=7
+2026-05-14 15:50:09 | INFO    | agent | [conv=cc78abd9] Tool execute_python completed (ok, 599 chars)
+2026-05-14 15:50:09 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=8, tools=7
+2026-05-14 15:50:17 | INFO    | agent | [conv=cc78abd9] Tool execute_python completed (ok, 1522 chars)
+2026-05-14 15:50:17 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=10, tools=7
+2026-05-14 15:50:32 | INFO    | agent | [conv=cc78abd9] Tool execute_python completed (ok, 2994 chars)
+2026-05-14 15:50:32 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=12, tools=7
+2026-05-14 15:50:33 | INFO    | agent | [conv=cc78abd9] Tool Skill completed (ok, 6293 chars)
+2026-05-14 15:50:33 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=14, tools=7
+2026-05-14 15:51:23 | INFO    | agent | [conv=cc78abd9] Tool execute_python completed (error, 175 chars)
+2026-05-14 15:51:23 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=16, tools=7
+2026-05-14 15:51:54 | INFO    | agent | [conv=cc78abd9] Tool execute_python completed (error, 37 chars)
+2026-05-14 15:51:54 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=18, tools=7
+2026-05-14 15:52:54 | INFO    | agent | [conv=cc78abd9] Tool execute_python completed (ok, 7773 chars)
+2026-05-14 15:52:54 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=20, tools=7
+2026-05-14 15:52:55 | INFO    | agent | [conv=cc78abd9] Tool execute_bash completed (ok, 338 chars)
+2026-05-14 15:52:55 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=22, tools=7
+2026-05-14 15:52:57 | INFO    | agent | [conv=cc78abd9] Tool read_file completed (ok, 1524 chars)
+2026-05-14 15:52:57 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=24, tools=7
+2026-05-14 15:52:58 | INFO    | agent | [conv=cc78abd9] Tool read_file completed (ok, 632 chars)
+2026-05-14 15:52:58 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=26, tools=7
+2026-05-14 15:52:59 | INFO    | agent | [conv=cc78abd9] Tool read_file completed (ok, 799 chars)
+2026-05-14 15:52:59 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=28, tools=7
+2026-05-14 15:53:00 | INFO    | agent | [conv=cc78abd9] Tool read_file completed (ok, 668 chars)
+2026-05-14 15:53:00 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=30, tools=7
+2026-05-14 15:53:02 | INFO    | agent | [conv=cc78abd9] Tool execute_bash completed (ok, 192 chars)
+2026-05-14 15:53:02 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=32, tools=7
+2026-05-14 15:53:08 | INFO    | agent | [conv=cc78abd9] Agent run complete: 15 tool calls, 535 chars output
+2026-05-14 15:53:08 | INFO    | app | Application shutting down
+2026-05-14 15:53:12 | INFO    | app | Application starting up...
+2026-05-14 15:53:12 | INFO    | app | Database tables initialized
+2026-05-14 15:53:17 | INFO    | app | Application starting up...
+2026-05-14 15:53:17 | INFO    | app | Database tables initialized
+2026-05-14 16:00:37 | INFO    | app | GET /api/v1/skills/public → 200 (11ms)
+2026-05-14 16:00:37 | INFO    | app | GET /api/v1/skills → 200 (58ms)
+2026-05-14 16:01:10 | INFO    | app | GET /api/v1/conversations → 200 (19ms)
+2026-05-14 16:01:10 | INFO    | app | GET /api/v1/models → 200 (7ms)
+2026-05-14 16:01:11 | INFO    | app | GET /api/v1/skills → 200 (10ms)
+2026-05-14 16:01:11 | INFO    | app | GET /api/v1/skills/public → 200 (6ms)
+2026-05-14 16:01:12 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-14 16:01:12 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 16:01:15 | INFO    | app | GET /api/v1/skills → 200 (9ms)
+2026-05-14 16:01:15 | INFO    | app | GET /api/v1/skills/public → 200 (6ms)
+2026-05-14 16:07:37 | INFO    | app | GET /api/v1/conversations → 200 (14ms)
+2026-05-14 16:07:37 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 16:07:39 | INFO    | app | GET /api/v1/conversations/cc78abd9-c8ed-4f37-b153-f6fd8469e017 → 200 (11ms)
+2026-05-14 16:07:39 | INFO    | app | GET /api/v1/conversations/cc78abd9-c8ed-4f37-b153-f6fd8469e017/messages?limit=100 → 200 (20ms)
+2026-05-14 16:07:40 | INFO    | app | GET /api/v1/uploads/cc78abd9-c8ed-4f37-b153-f6fd8469e017 → 200 (24ms)
+2026-05-14 16:24:11 | INFO    | app | GET /api/v1/conversations → 200 (17ms)
+2026-05-14 16:24:11 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 16:24:12 | INFO    | app | GET /api/v1/conversations/cc78abd9-c8ed-4f37-b153-f6fd8469e017 → 200 (9ms)
+2026-05-14 16:24:12 | INFO    | app | GET /api/v1/conversations/cc78abd9-c8ed-4f37-b153-f6fd8469e017/messages?limit=100 → 200 (13ms)
+2026-05-14 16:24:13 | INFO    | app | GET /api/v1/uploads/cc78abd9-c8ed-4f37-b153-f6fd8469e017 → 200 (17ms)
+2026-05-14 16:24:39 | INFO    | app | GET /api/v1/conversations → 200 (10ms)
+2026-05-14 16:24:39 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 16:24:40 | INFO    | app | GET /api/v1/conversations/cc78abd9-c8ed-4f37-b153-f6fd8469e017 → 200 (10ms)
+2026-05-14 16:24:40 | INFO    | app | GET /api/v1/conversations/cc78abd9-c8ed-4f37-b153-f6fd8469e017/messages?limit=100 → 200 (13ms)
+2026-05-14 16:24:40 | INFO    | app | GET /api/v1/uploads/cc78abd9-c8ed-4f37-b153-f6fd8469e017 → 200 (17ms)
+2026-05-14 16:25:01 | INFO    | app | GET /api/v1/conversations/cc78abd9-c8ed-4f37-b153-f6fd8469e017 → 200 (11ms)
+2026-05-14 16:25:01 | INFO    | app | GET /api/v1/conversations/cc78abd9-c8ed-4f37-b153-f6fd8469e017/messages?limit=100 → 200 (15ms)
+2026-05-14 16:25:02 | INFO    | app | GET /api/v1/uploads/cc78abd9-c8ed-4f37-b153-f6fd8469e017 → 200 (19ms)
+2026-05-14 16:25:03 | INFO    | app | GET /api/v1/conversations → 200 (11ms)
+2026-05-14 16:25:03 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 16:25:05 | INFO    | app | GET /api/v1/conversations/cc78abd9-c8ed-4f37-b153-f6fd8469e017 → 200 (10ms)
+2026-05-14 16:25:05 | INFO    | app | GET /api/v1/conversations/cc78abd9-c8ed-4f37-b153-f6fd8469e017/messages?limit=100 → 200 (15ms)
+2026-05-14 16:25:05 | INFO    | app | GET /api/v1/uploads/cc78abd9-c8ed-4f37-b153-f6fd8469e017 → 200 (23ms)
+2026-05-14 16:28:11 | INFO    | app | Application shutting down
+2026-05-14 16:28:16 | INFO    | app | Application starting up...
+2026-05-14 16:28:16 | INFO    | app | Database tables initialized
+2026-05-14 16:29:02 | INFO    | app | GET /api/v1/conversations → 200 (47ms)
+2026-05-14 16:29:02 | INFO    | app | GET /api/v1/models → 200 (7ms)
+2026-05-14 16:29:04 | INFO    | app | DELETE /api/v1/conversations/cc78abd9-c8ed-4f37-b153-f6fd8469e017 → 200 (43ms)
+2026-05-14 16:29:21 | INFO    | app | GET /api/v1/skills → 200 (19ms)
+2026-05-14 16:29:21 | INFO    | app | GET /api/v1/skills/public → 200 (10ms)
+2026-05-14 16:29:53 | INFO    | app | GET /api/v1/skills → 200 (12ms)
+2026-05-14 16:29:54 | INFO    | app | GET /api/v1/skills/public → 200 (7ms)
+2026-05-14 16:29:55 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-14 16:29:55 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 16:29:55 | INFO    | app | GET /api/v1/skills → 200 (11ms)
+2026-05-14 16:29:56 | INFO    | app | GET /api/v1/skills/public → 200 (6ms)
+2026-05-14 16:30:10 | INFO    | app | POST /api/v1/conversations → 200 (36ms)
+2026-05-14 16:30:10 | INFO    | app | GET /api/v1/conversations → 200 (8ms)
+2026-05-14 16:30:10 | INFO    | app | GET /api/v1/conversations/6ac293a7-480b-4048-bd6b-73272c09fe1a → 200 (11ms)
+2026-05-14 16:30:11 | INFO    | app | GET /api/v1/conversations/6ac293a7-480b-4048-bd6b-73272c09fe1a/messages?limit=100 → 200 (17ms)
+2026-05-14 16:30:11 | INFO    | app | GET /api/v1/uploads/6ac293a7-480b-4048-bd6b-73272c09fe1a → 200 (16ms)
+2026-05-14 16:30:24 | INFO    | app | POST /api/v1/uploads → 200 (28ms)
+2026-05-14 16:31:37 | INFO    | agent | [conv=6ac293a7] Starting agent run, model=glm-4, skills=2
+2026-05-14 16:31:37 | INFO    | app | POST /api/v1/conversations/6ac293a7-480b-4048-bd6b-73272c09fe1a/messages → 200 (13ms)
+2026-05-14 16:31:37 | INFO    | agent | [conv=6ac293a7] Loaded 2 skills for Skill tool
+2026-05-14 16:31:37 | INFO    | agent | [conv=6ac293a7] Built registry: 6 builtin + Skill tool
+2026-05-14 16:31:37 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=2, tools=7
+2026-05-14 16:31:49 | INFO    | agent | [conv=6ac293a7] Tool execute_python completed (ok, 678 chars)
+2026-05-14 16:31:50 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=4, tools=7
+2026-05-14 16:32:36 | INFO    | agent | [conv=6ac293a7] Tool execute_python completed (ok, 82867 chars)
+2026-05-14 16:32:36 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=6, tools=7
+2026-05-14 16:32:45 | INFO    | agent | [conv=6ac293a7] Tool read_file completed (ok, 141 chars)
+2026-05-14 16:32:45 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=8, tools=7
+2026-05-14 16:32:51 | INFO    | agent | [conv=6ac293a7] Agent run complete: 3 tool calls, 481 chars output
+2026-05-14 16:40:13 | INFO    | app | Application shutting down
+2026-05-14 16:40:22 | INFO    | app | Application starting up...
+2026-05-14 16:40:22 | INFO    | app | Database tables initialized
+2026-05-14 16:40:28 | INFO    | app | GET /api/v1/conversations → 200 (53ms)
+2026-05-14 16:40:28 | INFO    | app | GET /api/v1/models → 200 (7ms)
+2026-05-14 16:40:31 | INFO    | app | DELETE /api/v1/conversations/6ac293a7-480b-4048-bd6b-73272c09fe1a → 200 (70ms)
+2026-05-14 16:40:32 | INFO    | app | GET /api/v1/skills → 200 (18ms)
+2026-05-14 16:40:32 | INFO    | app | GET /api/v1/skills/public → 200 (9ms)
+2026-05-14 16:44:25 | INFO    | app | Application shutting down
+2026-05-14 16:44:33 | INFO    | app | Application starting up...
+2026-05-14 16:44:33 | INFO    | app | Database tables initialized
+2026-05-14 16:44:37 | INFO    | app | GET /api/v1/conversations → 200 (48ms)
+2026-05-14 16:44:37 | INFO    | app | GET /api/v1/models → 200 (8ms)
+2026-05-14 16:44:52 | INFO    | app | GET /api/v1/skills → 200 (20ms)
+2026-05-14 16:44:52 | INFO    | app | GET /api/v1/skills/public → 200 (11ms)
+2026-05-14 16:44:58 | INFO    | app | GET /api/v1/conversations → 200 (10ms)
+2026-05-14 16:44:58 | INFO    | app | GET /api/v1/models → 200 (0ms)
+2026-05-14 16:45:00 | INFO    | app | GET /api/v1/skills → 200 (9ms)
+2026-05-14 16:45:00 | INFO    | app | GET /api/v1/skills/public → 200 (6ms)
+2026-05-14 16:45:29 | INFO    | app | POST /api/v1/conversations → 200 (37ms)
+2026-05-14 16:45:29 | INFO    | app | GET /api/v1/conversations → 200 (9ms)
+2026-05-14 16:45:29 | INFO    | app | GET /api/v1/conversations/c0504e87-e364-4980-96b5-b2c6ac0f2984 → 200 (11ms)
+2026-05-14 16:45:29 | INFO    | app | GET /api/v1/conversations/c0504e87-e364-4980-96b5-b2c6ac0f2984/messages?limit=100 → 200 (19ms)
+2026-05-14 16:45:30 | INFO    | app | GET /api/v1/uploads/c0504e87-e364-4980-96b5-b2c6ac0f2984 → 200 (16ms)
+2026-05-14 16:45:38 | INFO    | app | POST /api/v1/uploads → 200 (21ms)
+2026-05-14 16:45:49 | INFO    | agent | [conv=c0504e87] Starting agent run, model=glm-4, skills=2
+2026-05-14 16:45:49 | INFO    | app | POST /api/v1/conversations/c0504e87-e364-4980-96b5-b2c6ac0f2984/messages → 200 (12ms)
+2026-05-14 16:45:49 | INFO    | agent | [conv=c0504e87] Loaded 2 skills for Skill tool
+2026-05-14 16:45:49 | INFO    | agent | [conv=c0504e87] Built registry: 6 builtin + Skill tool
+2026-05-14 16:45:49 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=2, tools=7
+2026-05-14 16:45:51 | INFO    | agent | [conv=c0504e87] Tool Skill completed (error, 77 chars)
+2026-05-14 16:45:51 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=4, tools=7
+2026-05-14 16:46:00 | INFO    | agent | [conv=c0504e87] Tool execute_python completed (ok, 766 chars)
+2026-05-14 16:46:00 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=6, tools=7
+2026-05-14 16:46:20 | INFO    | agent | [conv=c0504e87] Tool execute_python completed (error, 1316 chars)
+2026-05-14 16:46:20 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=8, tools=7
+2026-05-14 16:46:35 | INFO    | agent | [conv=c0504e87] Tool execute_python completed (ok, 4776 chars)
+2026-05-14 16:46:35 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=10, tools=7
+2026-05-14 16:46:36 | INFO    | agent | [conv=c0504e87] Tool Skill completed (ok, 6293 chars)
+2026-05-14 16:46:36 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=12, tools=7
+2026-05-14 16:47:53 | INFO    | agent | [conv=c0504e87] Tool execute_python completed (error, 1211 chars)
+2026-05-14 16:47:53 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=14, tools=7
+2026-05-14 16:48:12 | INFO    | agent | [conv=c0504e87] Tool execute_python completed (ok, 767 chars)
+2026-05-14 16:48:12 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=16, tools=7
+2026-05-14 16:49:06 | INFO    | agent | [conv=c0504e87] Tool execute_python completed (error, 174 chars)
+2026-05-14 16:49:06 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=18, tools=7
+2026-05-14 16:49:50 | INFO    | agent | [conv=c0504e87] Tool execute_python completed (ok, 17080 chars)
+2026-05-14 16:49:50 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=20, tools=7
+2026-05-14 16:50:47 | INFO    | agent | [conv=c0504e87] Tool execute_python completed (ok, 253 chars)
+2026-05-14 16:50:47 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=22, tools=7
+2026-05-14 16:50:48 | INFO    | agent | [conv=c0504e87] Tool execute_bash completed (ok, 635 chars)
+2026-05-14 16:50:48 | INFO    | llm | LLM stream -> https://open.bigmodel.cn/api/paas/v4/chat/completions, model=glm-4, messages=24, tools=7
+2026-05-14 16:50:56 | INFO    | agent | [conv=c0504e87] Agent run complete: 11 tool calls, 744 chars output
+2026-06-04 09:50:24 | INFO    | app | Application starting up...
+2026-06-04 09:50:24 | INFO    | app | Database tables initialized
+2026-06-04 09:51:07 | WARNING | app | Auth error on /api/v1/auth/login: 用户名或密码错误
+2026-06-04 09:51:07 | INFO    | app | POST /api/v1/auth/login → 401 (5ms)
+2026-06-04 09:51:24 | WARNING | app | Auth error on /api/v1/auth/login: 用户名或密码错误
+2026-06-04 09:51:24 | INFO    | app | POST /api/v1/auth/login → 401 (3ms)
+2026-06-04 09:51:45 | INFO    | app | POST /api/v1/auth/register → 200 (347ms)
+2026-06-04 09:51:45 | INFO    | app | GET /api/v1/skills → 200 (5ms)
+2026-06-04 09:51:45 | INFO    | app | GET /api/v1/skills/public → 200 (3ms)
+2026-06-04 09:53:37 | INFO    | app | Application shutting down
+2026-06-04 09:53:37 | INFO    | app | Application starting up...
+2026-06-04 09:53:37 | INFO    | app | Database tables initialized
+2026-06-04 09:53:41 | INFO    | app | GET /api/v1/skills → 200 (8ms)
+2026-06-04 09:53:41 | INFO    | app | GET /api/v1/skills/public → 200 (4ms)
+2026-06-04 09:55:10 | INFO    | app | Application starting up...
+2026-06-04 09:55:10 | INFO    | app | Database tables initialized
+2026-06-04 09:55:15 | INFO    | app | GET /api/v1/skills → 200 (7ms)
+2026-06-04 09:55:15 | INFO    | app | GET /api/v1/skills/public → 200 (3ms)
+2026-06-04 10:12:37 | INFO    | app | Application shutting down
+2026-06-04 10:12:37 | INFO    | app | Application starting up...
+2026-06-04 10:12:37 | INFO    | app | Database tables initialized
+2026-06-04 10:12:50 | INFO    | app | Application shutting down
+2026-06-04 10:12:50 | INFO    | app | Application starting up...
+2026-06-04 10:12:50 | INFO    | app | Database tables initialized
+2026-06-04 10:13:04 | INFO    | app | Application shutting down
+2026-06-04 10:13:05 | INFO    | app | Application starting up...
+2026-06-04 10:13:05 | INFO    | app | Database tables initialized
+2026-06-04 10:13:46 | INFO    | app | Application shutting down
+2026-06-04 10:13:46 | INFO    | app | Application starting up...
+2026-06-04 10:13:46 | INFO    | app | Database tables initialized
+2026-06-04 10:14:15 | INFO    | app | Application shutting down
+2026-06-04 10:14:16 | INFO    | app | Application starting up...
+2026-06-04 10:14:16 | INFO    | app | Database tables initialized
+2026-06-04 10:14:23 | INFO    | app | Application shutting down
+2026-06-04 10:14:23 | INFO    | app | Application starting up...
+2026-06-04 10:14:23 | INFO    | app | Database tables initialized
+2026-06-04 10:14:30 | INFO    | app | Application shutting down
+2026-06-04 10:14:31 | INFO    | app | Application starting up...
+2026-06-04 10:14:31 | INFO    | app | Database tables initialized
+2026-06-04 10:14:34 | INFO    | app | Application shutting down
+2026-06-04 10:14:35 | INFO    | app | Application starting up...
+2026-06-04 10:14:35 | INFO    | app | Database tables initialized
+2026-06-04 10:14:37 | INFO    | app | Application shutting down
