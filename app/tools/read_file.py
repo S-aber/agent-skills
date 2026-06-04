@@ -33,7 +33,12 @@ class ReadFileTool(Tool):
         }
 
     async def execute(self, input: dict, context: ToolContext) -> ToolResult:
-        file_path = input["file_path"]
+        file_path = input.get("file_path")
+        if not file_path:
+            return ToolResult(
+                content="Error: Missing required parameter 'file_path'.",
+                is_error=True,
+            )
         full_path = os.path.join(context.working_dir, file_path)
 
         # Security: prevent path traversal
@@ -52,7 +57,6 @@ class ReadFileTool(Tool):
             )
 
         if os.path.isdir(full_path):
-            # List directory contents
             items = os.listdir(full_path)
             return ToolResult(content="\n".join(items))
 
@@ -64,7 +68,6 @@ class ReadFileTool(Tool):
             limit = input.get("limit", len(lines))
             selected = lines[offset : offset + limit]
 
-            # Format with line numbers
             result_lines = []
             for i, line in enumerate(selected, start=offset + 1):
                 result_lines.append(f"{i}\t{line.rstrip()}")

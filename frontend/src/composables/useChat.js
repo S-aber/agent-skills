@@ -10,6 +10,30 @@ export function useChat() {
   const currentToolCall = ref(null) // { tool_name, input }
   const toolResults = reactive({}) // tool_use_id -> result
 
+  // Convert OpenAI-format tool_calls from DB to UI format {id, name, input, result}
+  function normalizeToolCalls(raw) {
+    if (!raw || !Array.isArray(raw)) return []
+    return raw.map(tc => {
+      // Already in UI format (from SSE streaming)
+      if (tc.name !== undefined && tc.input !== undefined) return tc
+      // OpenAI format from DB: {id, type, function: {name, arguments}, result?, is_error?}
+      if (tc.function) {
+        let input = {}
+        try {
+          input = JSON.parse(tc.function.arguments || '{}')
+        } catch (_) { /* ignore */ }
+        return {
+          id: tc.id,
+          name: tc.function.name,
+          input,
+          result: tc.result !== undefined ? tc.result : null,
+          is_error: tc.is_error || false,
+        }
+      }
+      return tc
+    })
+  }
+
   async function fetchHistory(convId) {
     try {
       const headers = {
@@ -22,7 +46,7 @@ export function useChat() {
         id: m.id,
         role: m.role,
         content: m.content,
-        tool_calls: m.tool_calls || [],
+        tool_calls: normalizeToolCalls(m.tool_calls),
         createdAt: new Date(m.created_at),
       }))
     } catch (e) {
@@ -35,7 +59,6 @@ export function useChat() {
 
     const token = localStorage.getItem('access_token')
 
-    // Add user message
     messages.value.push({
       id: Date.now().toString(),
       role: 'user',
@@ -70,36 +93,54 @@ export function useChat() {
       let currentAssistantId = null
       let assistantContent = ''
 
-      while (true) {
-        const { done, value } = await reader.read()
-        if (done) break
+      const STREAM_TIMEOUT_MS = 300_000 // 5 min
 
-        buffer += decoder.decode(value, { stream: true })
-        const lines = buffer.split('\n')
-        buffer = lines.pop() || ''
+      try {
+        while (true) {
+          const result = await Promise.race([
+            reader.read(),
+            new Promise((_, reject) =>
+              setTimeout(() => reject(new Error('STREAM_TIMEOUT')), STREAM_TIMEOUT_MS)
+            ),
+          ])
 
-        let eventType = ''
-        for (const line of lines) {
-          if (line.startsWith('event: ')) {
-            eventType = line.slice(7).trim()
-            continue
+          const { done, value } = result
+          if (done) break
+
+          buffer += decoder.decode(value, { stream: true })
+          const lines = buffer.split('\n')
+          buffer = lines.pop() || ''
+
+          let eventType = ''
+          for (const line of lines) {
+            if (line.startsWith('event: ')) {
+              eventType = line.slice(7).trim()
+              continue
+            }
+            if (!line.startsWith('data: ')) continue
+
+            const dataStr = line.slice(6)
+            try {
+              const data = JSON.parse(dataStr)
+              await handleSSEEvent(eventType, data, {
+                getCurrentAssistantId: () => currentAssistantId,
+                setCurrentAssistantId: (id) => { currentAssistantId = id },
+                getAssistantContent: () => assistantContent,
+                setAssistantContent: (c) => { assistantContent = c },
+                addToContent: (c) => { assistantContent += c },
+                resetAssistant: () => { currentAssistantId = null; assistantContent = '' },
+              })
+            } catch (_) {
+              // skip parse errors
+            }
           }
-          if (!line.startsWith('data: ')) continue
-
-          const dataStr = line.slice(6)
-          try {
-            const data = JSON.parse(dataStr)
-            await handleSSEEvent(eventType, data, {
-              getCurrentAssistantId: () => currentAssistantId,
-              setCurrentAssistantId: (id) => { currentAssistantId = id },
-              getAssistantContent: () => assistantContent,
-              setAssistantContent: (c) => { assistantContent = c },
-              addToContent: (c) => { assistantContent += c },
-              resetAssistant: () => { currentAssistantId = null; assistantContent = '' },
-            })
-          } catch (e) {
-            // skip parse errors
-          }
+        }
+      } catch (e) {
+        if (e.message === 'STREAM_TIMEOUT') {
+          reader.cancel()
+          error.value = '请求超时，请重试'
+        } else {
+          throw e
         }
       }
     } catch (e) {
@@ -139,7 +180,6 @@ export function useChat() {
           tool_name: data.tool_name,
           input: data.input,
         }
-        // If assistant hasn't been created yet, create one
         if (!ctx.getCurrentAssistantId()) {
           const id = Date.now().toString()
           ctx.setCurrentAssistantId(id)
@@ -152,7 +192,6 @@ export function useChat() {
             createdAt: new Date(),
           })
         }
-        // Add tool call to assistant message
         const asst = messages.value.find(m => m.id === ctx.getCurrentAssistantId())
         if (asst && !asst.tool_calls.find(tc => tc.id === data.tool_use_id)) {
           asst.tool_calls.push({
@@ -168,7 +207,6 @@ export function useChat() {
           content: data.content,
           is_error: data.is_error,
         }
-        // Update the tool call with result
         const asst2 = messages.value.find(m => m.id === ctx.getCurrentAssistantId())
         if (asst2) {
           const tc = asst2.tool_calls.find(t => t.id === data.tool_use_id)
@@ -185,7 +223,6 @@ export function useChat() {
         break
 
       case 'done':
-        // Mark streaming as complete
         const doneAsst = messages.value.find(m => m.id === ctx.getCurrentAssistantId())
         if (doneAsst) {
           doneAsst.isStreaming = false

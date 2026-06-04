@@ -22,6 +22,11 @@ const routes = [
     component: () => import('../views/ConversationsPage.vue'),
   },
   {
+    path: '/mcp',
+    name: 'McpServers',
+    component: () => import('../views/McpServersPage.vue'),
+  },
+  {
     path: '/chat/:id',
     name: 'Chat',
     component: () => import('../views/ChatPage.vue'),

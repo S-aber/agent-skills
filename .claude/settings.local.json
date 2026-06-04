@@ -5,7 +5,10 @@
       "Bash(curl -s http://localhost:8080/)",
       "Bash(curl *)",
       "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f'Count: {len\\(d\\)}'\\)\")",
-      "Bash(npx vite *)"
+      "Bash(npx vite *)",
+      "Bash(fc-list :lang=zh)",
+      "Read(//usr/share/fonts/**)",
+      "Bash(python3 -c \"import matplotlib.font_manager; fonts = [f.name for f in matplotlib.font_manager.fontManager.ttflist]; print\\([f for f in fonts if any\\(k in f.lower\\(\\) for k in ['cjk', 'hei', 'song', 'ming', 'kai', 'noto', 'wenquan', 'chinese', 'cn', 'sc']\\)\\)]\")"
     ],
     "additionalDirectories": [
       "/mnt/c/Users/27267/Projects/claude-code-ts"

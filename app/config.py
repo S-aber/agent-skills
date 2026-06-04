@@ -19,6 +19,11 @@ class Settings(BaseSettings):
     # Storage
     skills_storage_path: str = "./storage/skills"
     workspace_storage_path: str = "./storage/workspace"
+    uploads_storage_path: str = "./storage/workspace/uploads"
+
+    # MCP
+    mcp_connection_timeout: int = 30
+    mcp_tool_timeout: int = 120
 
     # Logging
     logs_dir: str = "./logs"

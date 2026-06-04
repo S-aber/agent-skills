@@ -24,7 +24,12 @@ class WebSearchTool(Tool):
         }
 
     async def execute(self, input: dict, context: ToolContext) -> ToolResult:
-        query = input["query"]
+        query = input.get("query")
+        if not query:
+            return ToolResult(
+                content="Error: Missing required parameter 'query'.",
+                is_error=True,
+            )
 
         # Note: This is a stub implementation.
         # For a real implementation, you would integrate with:
